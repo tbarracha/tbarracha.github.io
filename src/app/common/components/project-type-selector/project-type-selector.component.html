@@ -1,4 +1,4 @@
-<div class="h-8 px-8 w-full flex items-center space-x-2">
+<div class="h-8 w-full flex items-center space-x-2 px-16">
     @for(type of projectTypes; track type) {
         <button class="w-16 rounded-md bg-transparent hover:font-semibold hover:shadow-md {{ projectService.selectedProjectType === type ? 'border font-semibold shadow-md' : '' }} "
         (click)="selectProjectType(type)">

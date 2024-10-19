@@ -4,11 +4,12 @@ import { ProjectService } from '../../services/project-service/project.service';
 import { ProjectCardComponent } from "../project-card/project-card.component";
 import { Project } from '../../models/models';
 import { ProjectType } from '../../models/enums';
+import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-project-list',
   standalone: true,
-  imports: [ProjectCardComponent],
+  imports: [ProjectCardComponent, NgStyle],
   templateUrl: './project-list.component.html',
   styleUrl: './project-list.component.scss'
 })

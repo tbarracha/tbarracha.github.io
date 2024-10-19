@@ -4,12 +4,17 @@
         title: 'Hello!\nI am Tiago Barracha,\nFullstack Developer',
         subTitle: 'I create web and mobile apps, video games & all things IOT'
     }"
-    class="flex-grow flex items-center justify-center">
+    class="flex-grow flex items-center justify-center px-16">
     </app-section-title>
     
     <!-- Project Type Selector fixed at the bottom of the screen -->
-    <app-project-type-selector class="bg-main-bg bg-opacity-20 backdrop-blur-sm z-30 top-12 sticky"></app-project-type-selector>
+    <app-project-type-selector #stickyProjectTypeSelector
+    [ngClass]="{
+        'shadow-lg h-10': isSticky
+    }" 
+    class="z-30 top-12 sticky bg-main-bg">
+</app-project-type-selector>
     
     <!-- Project List, appears below project type selector -->
-    <app-project-list class="mt-16"></app-project-list>
+    <app-project-list class="mt-16  px-16"></app-project-list>
 </div>

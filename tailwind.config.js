@@ -50,7 +50,29 @@ module.exports = {
         'dark-hl-secondary-lighter': '#4A7E7F',
         'dark-hl-secondary-dark': '#4A7E7F',
       },
+      // Extending to include custom text shadow
+      textShadow: {
+        'default': '2px 2px 4px rgba(0, 0, 0, 0.25)', // Default small shadow
+        'lg': '4px 4px 6px rgba(0, 0, 0, 0.35)', // Larger shadow
+        'xl': '6px 6px 8px rgba(0, 0, 0, 0.45)', // Extra large shadow
+      }
     },
   },
-  plugins: [],
-}
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.text-shadow': {
+          textShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)', // Default small shadow
+        },
+        '.text-shadow-lg': {
+          textShadow: '0px 4px 6px rgba(0, 0, 0, 0.35)', // Larger shadow
+        },
+        '.text-shadow-xl': {
+          textShadow: '0px 6px 8px rgba(0, 0, 0, 0.45)', // Extra large shadow
+        },
+      };
+
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    },
+  ],
+};

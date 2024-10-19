@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { ProjectType } from '../../models/enums';
 import { EventService } from '../../services/event-service/event.service';
 import { ProjectService } from '../../services/project-service/project.service';
@@ -15,7 +15,8 @@ export class ProjectTypeSelectorComponent {
 
   constructor(
     private readonly eventService: EventService,
-    readonly projectService: ProjectService
+    readonly projectService: ProjectService,
+    public elementRef: ElementRef
   ) { }
 
   selectProjectType(projectType: ProjectType) {

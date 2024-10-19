@@ -1,8 +1,7 @@
 <div class="w-full grid grid-cols-3 grid-flow-row p-3 gap-4">
     @for(project of projectList; track project.name) {
         @if (isProjectOfCurrentType(project)) {
-            <app-project-card [project]="project"
-            class=""></app-project-card>
+            <app-project-card [project]="project" class="w-full h-48"></app-project-card>
         }
     }
 </div>

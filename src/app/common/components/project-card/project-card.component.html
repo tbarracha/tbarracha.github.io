@@ -1,6 +1,11 @@
-<div class="relative group overflow-hidden w-full h-full rounded-md hover:shadow-lg">
-    <!-- Info Section (Initially hidden, revealed on hover, with backdrop blur) -->
-    <div class="absolute inset-0 bg-black bg-opacity-10 backdrop-blur-md p-4 z-10 transform translate-y-full group-hover:translate-y-[50%] transition-all duration-500 ease-in-out">
+<div class="relative w-full h-full overflow-hidden group">
+    <!-- The image starts scaled up and scales down to 100% on hover -->
+    <img class="object-cover w-full h-full transform scale-[120%] group-hover:scale-100 transition-transform duration-500 ease-in-out" 
+         [src]="project.image" 
+         alt="Project Image">
+
+    <!-- Text overlay that slides up on hover -->
+    <div class="absolute inset-0 bg-black bg-opacity-50 p-4 z-10 transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-in-out">
         <h3 class="font-bold text-lg text-white">{{ project.name }}</h3>
         <div class="flex space-x-1 text-white">
             @for(type of project.projectTypes; track type; let last = $last) {
@@ -11,7 +16,7 @@
                 }
             }
         </div>
-        <div class="flex space-x-1 text-white">
+        <div class="flex space-x-1 text-white mt-2">
             @for(tech of project.technologies; track tech; let last = $last) {
                 @if(!last) {
                     <span class="text-sm">{{ tech }},</span>
@@ -20,11 +25,5 @@
                 }
             }
         </div>
-    </div>
-
-    <!-- Image Section -->
-    <div class="relative w-full h-full">
-        <!-- The image starts scaled down and expands to 100% on hover -->
-        <img class="object-cover w-full h-full transform scale-110 group-hover:scale-100 transition-transform duration-500 ease-in-out" [src]="project.image" alt="Project Image">
     </div>
 </div>

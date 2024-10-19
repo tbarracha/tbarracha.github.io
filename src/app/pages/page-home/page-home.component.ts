@@ -1,15 +1,53 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { SectionTitleComponent } from '../../common/components/section-title/section-title.component';
 import { ProjectTypeSelectorComponent } from "../../common/components/project-type-selector/project-type-selector.component";
-import { ProjectListComponent } from "../../common/components/project-list/project-list.component";
+import { NgClass } from '@angular/common';
+import { ProjectListComponent } from '../../common/components/project-list/project-list.component';
 
 @Component({
   selector: 'app-page-home',
   standalone: true,
-  imports: [SectionTitleComponent, ProjectTypeSelectorComponent, ProjectListComponent],
+  imports: [SectionTitleComponent, ProjectTypeSelectorComponent, ProjectListComponent, NgClass],
   templateUrl: './page-home.component.html',
-  styleUrl: './page-home.component.scss'
+  styleUrls: ['./page-home.component.scss']
 })
-export class PageHomeComponent {
+export class PageHomeComponent implements AfterViewInit {
+  @ViewChild(ProjectTypeSelectorComponent, { static: false }) projectTypeSelectorComp!: ProjectTypeSelectorComponent;
+  isSticky: boolean = false;
+  initialPosition: number = 0; // To store the initial top position of the element
 
+  // Listen for scroll events on the window
+  @HostListener('window:scroll', ['$event'])
+  onScroll() {
+    this.checkStickyStatus();
+  }
+
+  ngAfterViewInit() {
+    if (this.projectTypeSelectorComp?.elementRef?.nativeElement === undefined) {
+      console.log("Native element not found");
+      return;
+    }
+
+    // Get the initial position of the element from the top of the document
+    this.initialPosition = this.projectTypeSelectorComp.elementRef.nativeElement.getBoundingClientRect().top + window.pageYOffset;
+    
+    // Initial check for sticky status
+    this.checkStickyStatus();
+  }
+
+  // Manual check for sticky status based on scroll position
+  checkStickyStatus() {
+    const scrollY = window.scrollY;
+
+    // Check if the current scroll position has passed the initial top position of the element
+    if (scrollY >= this.initialPosition) {
+      if (!this.isSticky) {
+        this.isSticky = true; // Set sticky state
+      }
+    } else {
+      if (this.isSticky) {
+        this.isSticky = false; // Unset sticky state
+      }
+    }
+  }
 }
