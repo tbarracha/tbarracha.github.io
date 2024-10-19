@@ -7,7 +7,10 @@ export const projects : Project[] = [
         name: 'Dashy Heroes',
         description: 'Dashy Heroes is a 2D platformer game where you play as a hero who can dash through enemies to defeat them. The game is built using Unity and C#.',
         images: [
-            '/assets/images/projects/dashy_heroes/proj_dashyheroes.webp',
+            '/assets/images/projects/dashy_heroes/proj_dashyheroes_0.webp',
+            '/assets/images/projects/dashy_heroes/proj_dashyheroes_1.webp',
+            '/assets/images/projects/dashy_heroes/proj_dashyheroes_2.webp',
+            '/assets/images/projects/dashy_heroes/proj_dashyheroes_3.webp',
         ],
         link: 'https://apkpure.com/dashy-heroes/com.Stardrop.DashyHeroes',
         gitHubLink: '',

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { PositionInList, ProjectType } from '../../models/enums';
 import { EventService } from '../event-service/event.service';
 import { Project } from '../../models/models';
-import { projects } from '../../models/constants';
+import { projects } from '../../models/globals';
 
 
 @Injectable({

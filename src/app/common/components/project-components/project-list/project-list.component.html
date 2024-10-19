@@ -1,5 +1,9 @@
 <div class="w-full grid grid-cols-3 grid-flow-row p-3 gap-4 min-h-screen">
-    @for(project of projectService.filteredProjects; track project.name) {
-        <app-project-card [project]="project" class="w-full aspect-[4/3]"></app-project-card>
+    @for(project of projectService.filteredProjects; track project.name; let i = $index) {
+        <app-project-card 
+            [project]="project" 
+            [index]="i"
+            class="w-full aspect-[4/3]">
+        </app-project-card>
     }
 </div>

@@ -1,22 +1,19 @@
 <div class="bg-main-bg">
     <app-header class="bg-inherit"></app-header>
-    <div class="flex flex-col min-h-screen">
+    <div class="relative flex flex-col min-h-screen">
         <!-- Section Title occupying most of the screen -->
         <app-section-title [sectionTitleOptions]="{
             title: 'Hello!\nI am Tiago Barracha,\nFullstack Developer',
             subTitle: 'I create web and mobile apps, video games & all things IOT'
-        }"
-        class="flex-grow flex items-center justify-center px-16">
+        }" class="flex-grow flex items-center justify-center px-16">
         </app-section-title>
-        
+
         <!-- Project Type Selector fixed at the bottom of the screen -->
-        <app-project-type-selector #stickyProjectTypeSelector
-        [ngClass]="{
+        <app-project-type-selector #stickyProjectTypeSelector [ngClass]="{
             'shadow-lg h-10': isSticky
-        }" 
-        class="z-30 top-12 sticky bg-main-bg">
-    </app-project-type-selector>
-        
+        }" class="z-30 top-12 sticky bg-main-bg">
+        </app-project-type-selector>
+
         <!-- Project List, appears below project type selector -->
         <app-project-list class="mt-16  px-16"></app-project-list>
     </div>

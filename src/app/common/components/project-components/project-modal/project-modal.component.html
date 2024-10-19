@@ -10,21 +10,21 @@
 
     <!-- Left navigation button -->
     @if (currentProject.positionInList != 'First') {
-    <button
-        class="absolute left-8 top-1/2 transform -translate-y-1/2 p-3 bg-white bg-opacity-70 hover:bg-opacity-100 text-black font-bold rounded-full z-50"
-        (click)="navigateProject('left', currentProject); $event.stopPropagation()">
-        ‹
-    </button>
+        <button
+            class="absolute left-[3%] top-1/2 transform -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-white bg-opacity-70 hover:bg-opacity-100 hover:shadow-lg text-black font-bold rounded-full z-50"
+            (click)="navigateProject('left', currentProject); $event.stopPropagation()">
+            ‹
+        </button>
     }
-
-    <!-- Right navigation button -->
+    
     @if (currentProject.positionInList != 'Last') {
-    <button
-        class="absolute right-8 top-1/2 transform -translate-y-1/2 p-3 bg-white bg-opacity-70 hover:bg-opacity-100 text-black font-bold rounded-full z-50"
-        (click)="navigateProject('right', currentProject); $event.stopPropagation()">
-        ›
-    </button>
+        <button
+            class="absolute right-[3%] top-1/2 transform -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-white bg-opacity-70 hover:bg-opacity-100 hover:shadow-lg text-black font-bold rounded-full z-50"
+            (click)="navigateProject('right', currentProject); $event.stopPropagation()">
+            ›
+        </button>
     }
+    
 
     <!-- Modal content, animating from bottom to top -->
     <div class="bg-white w-[90%] h-full shadow-lg relative overflow-hidden transform transition-transform duration-500 ease-in-out flex flex-col md:flex-row"
@@ -51,7 +51,7 @@
         <!-- Right Section: Project Info -->
         <div class="w-full md:w-2/5 p-4 overflow-y-auto bg-main-bg shadow-md">
             <!-- Close Button at the top-right -->
-            <div class="flex justify-between items-start mb-4">
+            <div class="flex justify-between items-start">
                 <!-- Project Name (takes as much vertical space as needed) -->
                 <div class="flex-grow">
                     <h2 class="text-3xl font-bold font-red-hat-display">{{ currentProject.name }}</h2>
@@ -61,6 +61,16 @@
                 <button class="text-gray-500 hover:text-main-hl-primary" (click)="closeModal()">
                     ✕
                 </button>
+            </div>
+
+            <div class="mb-4">
+                @for (type of currentProject.projectTypes; track type; let last = $last) {
+                    @if(!last) {
+                    <span>{{ type }}, </span>
+                    } @else {
+                    <span>{{ type }}</span>
+                    }
+                }
             </div>
 
             <!-- Project Description -->
