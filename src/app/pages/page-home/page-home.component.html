@@ -1,0 +1,15 @@
+<div class="bg-main-bg flex flex-col min-h-screen">
+    <!-- Section Title occupying most of the screen -->
+    <app-section-title [sectionTitleOptions]="{
+        title: 'Hello!\nI am Tiago Barracha,\nFullstack Developer',
+        subTitle: 'I create web and mobile apps, video games & all things IOT'
+    }"
+    class="flex-grow flex items-center justify-center">
+    </app-section-title>
+    
+    <!-- Project Type Selector fixed at the bottom of the screen -->
+    <app-project-type-selector class="bg-main-bg bg-opacity-20 backdrop-blur-sm z-30 top-12 sticky"></app-project-type-selector>
+    
+    <!-- Project List, appears below project type selector -->
+    <app-project-list class="mt-16"></app-project-list>
+</div>
