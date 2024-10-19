@@ -38,16 +38,10 @@ export class ProjectCardComponent {
   ) { 
   }
 
-  ngOnInit() {
-    console.log("Project card initialized for project:", this.project.name);
-  }
-
-  setAnimationDelay(index: number) {    
-    this.delay = (index + 1) * 0.15;
-  }
-
-  onAnimationDone() {
-    console.log("Animation completed for project:", this.project.name);
+  setAnimationDelay(index: number) {
+    const baseDelay = (index + 1) * 0.15;
+    this.delay = Math.min(baseDelay, 1.5);
+    console.log("Delay: " + this.delay);
   }
 
   playAnimation() {
