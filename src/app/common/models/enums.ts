@@ -44,3 +44,8 @@ export enum Technology {
     PostgreSQL = 'PostgreSQL',
     MongoDB = 'MongoDB',
 }
+
+export enum VisibleState {
+    Hidden = 'hidden',
+    Showing = 'showing'
+}

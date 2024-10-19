@@ -1,10 +1,12 @@
 <div class="relative w-full h-full overflow-hidden group hover:shadow-md cursor-pointer"
-     (click)="eventService.selectedProjectEvent.emit(project)">
+     (click)="eventService.selectedProjectEvent.emit(project)"
+     [@cardAnimation]="{ value: isVisible ? 'showing' : 'hidden', params: { delay: delay } }"
+     >
     <!-- Image with scaling on hover -->
     <img class="absolute inset-0 object-cover object-center w-full h-full transform scale-110 group-hover:scale-[120%] transition-transform duration-500 ease-in-out" 
          [src]="project.images[0]" 
          alt="Project Image">
-
+    
     <!-- Text overlay -->
     <div class="absolute inset-0 bg-black bg-opacity-50 p-4 z-10 transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-in-out">
         <h3 class="font-bold text-lg text-white">{{ project.name }}</h3>

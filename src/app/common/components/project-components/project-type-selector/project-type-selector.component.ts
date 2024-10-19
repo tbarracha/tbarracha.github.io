@@ -20,6 +20,10 @@ export class ProjectTypeSelectorComponent {
   ) { }
 
   selectProjectType(projectType: ProjectType) {
+    if (projectType === this.projectService.selectedProjectType) {
+      return;
+    }
+
     this.eventService.selectedProjectTypeEvent.emit(projectType);
     console.log("Changed project type to: " + projectType);
   }

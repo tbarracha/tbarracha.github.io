@@ -39,12 +39,20 @@ export class ProjectService {
     });
 
     this.filterProjects();
+
+    setTimeout(() => {
+      eventService.selectedProjectTypeEvent.emit(ProjectType.All);
+    }, 100);
   }
 
   filterProjects() {
     this.projectList.forEach((project) => {project.positionInList = PositionInList.Middle;});
-
     this.filteredProjects = this.projectList.filter((project) => this.isProjectOfCurrentType(project));
+
+    if (this.filteredProjects.length <= 0) {
+      return
+    }
+    
     this.filteredProjects[0].positionInList = PositionInList.First;
     this.filteredProjects[this.filteredProjects.length - 1].positionInList = PositionInList.Last;
 }

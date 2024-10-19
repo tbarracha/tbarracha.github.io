@@ -1,55 +1,46 @@
-import { Component, ElementRef, QueryList, Renderer2, ViewChildren } from '@angular/core';
+import { Component, QueryList, ViewChildren } from '@angular/core';
 import { ProjectService } from '../../../services/project-service/project.service';
 import { ProjectCardComponent } from "../project-card/project-card.component";
 import { NgStyle, NgClass } from '@angular/common';
 import { EventService } from '../../../services/event-service/event.service';
+import { Project } from '../../../models/models';
 
 @Component({
   selector: 'app-project-list',
   standalone: true,
   imports: [ProjectCardComponent, NgStyle, NgClass],
   templateUrl: './project-list.component.html',
-  styleUrl: './project-list.component.scss'
+  styleUrls: ['./project-list.component.scss']
 })
 export class ProjectListComponent {
-
-  @ViewChildren(ProjectCardComponent, { read: ElementRef }) projectCards!: QueryList<ElementRef>;
+  @ViewChildren(ProjectCardComponent) projectCards!: QueryList<ProjectCardComponent>;
+  projectList: Project[] = [];
 
   constructor(
     readonly eventService: EventService,
-    readonly projectService: ProjectService,
-    private renderer: Renderer2
+    readonly projectService: ProjectService
   ) {
+    eventService.selectedProjectTypeEvent.subscribe(() => {this.selectedTypeChanged()});
   }
 
-  ngAfterViewInit() {
+  private selectedTypeChanged() {
+    this.projectList = [];
+    
+    setTimeout(() => {
+      this.projectList = this.projectService.filteredProjects;
+    }, 100);
+    
+    setTimeout(() => {
+      this.animateAllCards();
+    }, 120);
+
+    console.log("Selected project type", this.projectService.selectedProjectType);
+  }
+
+  animateAllCards() {
     this.projectCards.forEach((card, index) => {
-      // Apply a delay for each project card
-      const delay = index * 75;
-      const cardElement = card.nativeElement;
-
-      console.log(cardElement);
-
-      // Set the initial opacity and transform for animation
-      this.renderer.setStyle(cardElement, 'opacity', '0');
-      this.renderer.setStyle(cardElement, 'transform', 'translateY(1rem)');
-
-      // Add transition and animation properties with delay
-      setTimeout(() => {
-        this.renderer.setStyle(cardElement, 'transition', 'all 0.5s ease-in-out');
-        this.renderer.setStyle(cardElement, 'opacity', '1');
-        this.renderer.setStyle(cardElement, 'transform', 'translateY(0)');
-      }, delay);
+      card.setAnimationDelay(index);
+      card.playAnimation();
     });
-  }
-  
-  getDelayClass(index: number): string {
-    const delay = index * 75;
-    return `delay-${delay}`;
-  }
-
-  getProjectCardClasses(index: number): string {
-    const delay = `delay-${index * 75}`;
-    return `w-full aspect-[4/3] opacity-0 transform translate-y-4 transition-all ease-in-out duration-500 ${delay}`;
   }
 }
