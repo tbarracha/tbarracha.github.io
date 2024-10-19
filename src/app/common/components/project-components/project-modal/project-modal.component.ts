@@ -1,4 +1,4 @@
-import { Component, Renderer2 } from '@angular/core';
+import { Component, Input, Renderer2 } from '@angular/core';
 import { NgIf, NgClass } from '@angular/common';
 import { EventService } from '../../../services/event-service/event.service';
 import { ProjectService } from '../../../services/project-service/project.service';
@@ -16,6 +16,8 @@ export class ProjectModalComponent {
   isAnimating = false; // Controls the slide animation state
   currentProject!: Project;
   selectedImage: string = '';
+
+  @Input() componentToPad!: HTMLDivElement;
 
   constructor(
     private renderer: Renderer2,
@@ -59,14 +61,14 @@ export class ProjectModalComponent {
   // Function to calculate and add padding equal to the scrollbar width
   private addScrollbarPadding() {
     const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-    this.renderer.setStyle(document.body, 'padding-right', `${scrollbarWidth}px`);
-    //this.renderer.setStyle(document.body, 'transition', 'padding-right 500ms ease'); // Smooth transition
+    this.renderer.setStyle(this.componentToPad, 'padding-right', `${scrollbarWidth}px`);
+    //this.renderer.setStyle(this.componentToPad, 'transition', 'padding-right 500ms ease'); // Smooth transition
   }
 
   // Function to remove the padding
   private removeScrollbarPadding() {
-    this.renderer.setStyle(document.body, 'padding-right', '0px');
-    //this.renderer.setStyle(document.body, 'transition', 'padding-right 500ms ease');
+    this.renderer.setStyle(this.componentToPad, 'padding-right', '0px');
+    //this.renderer.setStyle(this.componentToPad, 'transition', 'padding-right 500ms ease');
   }
 
   selectImage(image: string) {

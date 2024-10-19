@@ -1,4 +1,4 @@
-<div class="bg-main-bg">
+<div #pageHomeComponent class="bg-main-bg">
     <app-header class="bg-inherit"></app-header>
     <div class="relative flex flex-col min-h-screen">
         <!-- Section Title occupying most of the screen -->
@@ -19,4 +19,4 @@
     </div>
 </div>
 
-<app-project-modal></app-project-modal>
+<app-project-modal [componentToPad]="pageHomeComponent"></app-project-modal>
