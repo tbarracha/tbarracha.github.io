@@ -1,13 +1,15 @@
 import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { SectionTitleComponent } from '../../common/components/section-title/section-title.component';
-import { ProjectTypeSelectorComponent } from "../../common/components/project-type-selector/project-type-selector.component";
+import { ProjectTypeSelectorComponent } from "../../common/components/project-components/project-type-selector/project-type-selector.component";
 import { NgClass } from '@angular/common';
-import { ProjectListComponent } from '../../common/components/project-list/project-list.component';
+import { ProjectListComponent } from '../../common/components/project-components/project-list/project-list.component';
+import { ProjectModalComponent } from "../../common/components/project-components/project-modal/project-modal.component";
+import { HeaderComponent } from "../../common/components/header/header.component";
 
 @Component({
   selector: 'app-page-home',
   standalone: true,
-  imports: [SectionTitleComponent, ProjectTypeSelectorComponent, ProjectListComponent, NgClass],
+  imports: [SectionTitleComponent, ProjectTypeSelectorComponent, ProjectListComponent, NgClass, ProjectModalComponent, HeaderComponent],
   templateUrl: './page-home.component.html',
   styleUrls: ['./page-home.component.scss']
 })

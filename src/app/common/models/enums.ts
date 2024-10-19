@@ -1,3 +1,9 @@
+export enum PositionInList {
+    First = 'First',
+    Middle = 'Middle',
+    Last = 'Last',
+}
+
 export enum ProjectType {
     All = 'All',
     Web = 'Web',

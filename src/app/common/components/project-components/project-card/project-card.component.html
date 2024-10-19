@@ -1,7 +1,8 @@
-<div class="relative w-full h-full overflow-hidden group">
+<div class="relative w-full h-full overflow-hidden group hover:shadow-md cursor-pointer"
+(click)="eventService.selectedProjectEvent.emit(project)">
     <!-- The image starts scaled up and scales down to 100% on hover -->
-    <img class="object-cover w-full h-full transform scale-[120%] group-hover:scale-100 transition-transform duration-500 ease-in-out" 
-         [src]="project.image" 
+    <img class="absolute inset-0 object-cover object-center w-full h-full transform scale-110 group-hover:scale-[120%] transition-transform duration-500 ease-in-out" 
+         [src]="project.images[0]" 
          alt="Project Image">
 
     <!-- Text overlay that slides up on hover -->

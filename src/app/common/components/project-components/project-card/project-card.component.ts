@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { Project } from '../../models/models';
-import { ProjectService } from '../../services/project-service/project.service';
+import { Project } from '../../../models/models';
+import { ProjectService } from '../../../services/project-service/project.service';
+import { EventService } from '../../../services/event-service/event.service';
 
 @Component({
   selector: 'app-project-card',
@@ -13,8 +14,11 @@ export class ProjectCardComponent {
   @Input() project!: Project;
 
   constructor(
+    readonly eventService: EventService,
     readonly projectService: ProjectService
   ) { 
     
   }
+
+  
 }

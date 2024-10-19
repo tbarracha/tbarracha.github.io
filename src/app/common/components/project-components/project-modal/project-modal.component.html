@@ -1,0 +1,83 @@
+<!-- Modal overlay -->
+<div *ngIf="isOpen"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black transition-all duration-500 ease-in-out"
+    [ngClass]="{ 
+    'bg-opacity-0': !isAnimating, 
+    'bg-opacity-75': isAnimating,
+    'backdrop-blur-none': !isAnimating, 
+    'backdrop-blur-sm': isAnimating 
+  }" (click)="closeModal()">
+
+    <!-- Left navigation button -->
+    @if (currentProject.positionInList != 'First') {
+    <button
+        class="absolute left-8 top-1/2 transform -translate-y-1/2 p-3 bg-white bg-opacity-70 hover:bg-opacity-100 text-black font-bold rounded-full z-50"
+        (click)="navigateProject('left', currentProject); $event.stopPropagation()">
+        ‹
+    </button>
+    }
+
+    <!-- Right navigation button -->
+    @if (currentProject.positionInList != 'Last') {
+    <button
+        class="absolute right-8 top-1/2 transform -translate-y-1/2 p-3 bg-white bg-opacity-70 hover:bg-opacity-100 text-black font-bold rounded-full z-50"
+        (click)="navigateProject('right', currentProject); $event.stopPropagation()">
+        ›
+    </button>
+    }
+
+    <!-- Modal content, animating from bottom to top -->
+    <div class="bg-white w-[90%] h-full shadow-lg relative overflow-hidden transform transition-transform duration-500 ease-in-out flex flex-col md:flex-row"
+        [ngClass]="{ 'translate-y-full': !isAnimating, 'translate-y-0': isAnimating }"
+        (click)="$event.stopPropagation()">
+
+        <!-- Left Section: Images -->
+        <div class="w-full md:w-3/5 p-4 flex flex-col">
+
+            <!-- Main Image (occupies 2/3 of the height) -->
+            <div class="flex-grow h-2/3 mb-4">
+                <img class="w-full h-full object-cover rounded-md" [src]="selectedImage" alt="Main Project Image">
+            </div>
+
+            <!-- Smaller Images (appear below the main image) -->
+            <div class="flex space-x-2 overflow-x-auto">
+                @for (img of currentProject.images; track img) {
+                <img class="w-24 h-24 object-cover rounded-md cursor-pointer" [src]="img" (click)="selectImage(img)"
+                    alt="Project Image">
+                }
+            </div>
+        </div>
+
+        <!-- Right Section: Project Info -->
+        <div class="w-full md:w-2/5 p-4 overflow-y-auto bg-main-bg shadow-md">
+            <!-- Close Button at the top-right -->
+            <div class="flex justify-between items-start mb-4">
+                <!-- Project Name (takes as much vertical space as needed) -->
+                <div class="flex-grow">
+                    <h2 class="text-3xl font-bold font-red-hat-display">{{ currentProject.name }}</h2>
+                </div>
+
+                <!-- Close Button (stays at the top-right) -->
+                <button class="text-gray-500 hover:text-main-hl-primary" (click)="closeModal()">
+                    ✕
+                </button>
+            </div>
+
+            <!-- Project Description -->
+            <div class="mb-4">
+                <h3 class="text-xl font-semibold mb-2">Description</h3>
+                <p class="text-gray-700">{{ currentProject.description }}</p>
+            </div>
+
+            <!-- Project Technologies -->
+            <div class="mb-4">
+                <h3 class="text-lg font-semibold mb-2">Technologies Used</h3>
+                <ul class="list-disc pl-5">
+                    @for (tech of currentProject.technologies; track tech) {
+                    <li>{{ tech }}</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,7 @@
 import { Component, ElementRef } from '@angular/core';
-import { ProjectType } from '../../models/enums';
-import { EventService } from '../../services/event-service/event.service';
-import { ProjectService } from '../../services/project-service/project.service';
+import { ProjectType } from '../../../models/enums';
+import { EventService } from '../../../services/event-service/event.service';
+import { ProjectService } from '../../../services/project-service/project.service';
 
 @Component({
   selector: 'app-project-type-selector',
