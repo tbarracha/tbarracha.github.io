@@ -1,6 +1,6 @@
 <div class="bg-inherit w-full flex items-center space-x-2">
     @for(type of projectTypes; track type) {
-        <button class="w-16 text-left
+        <button class="w-16
         {{ projectService.selectedProjectType === type ? 'font-bold text-main-hl-primary' : ' hover:font-semibold' }} "
         (click)="selectProjectType(type)">
             {{ type }}

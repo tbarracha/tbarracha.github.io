@@ -47,4 +47,11 @@ export class ProjectCardComponent {
     this.isVisible = true;
     this.cd.detectChanges();
   }
+
+  getTypesAndTechnologies(): string[] {
+    const types = Array.isArray(this.project.projectTypes) ? this.project.projectTypes.map(type => type.toString()) : [];
+    const technologies = Array.isArray(this.project.technologies) ? this.project.technologies.map(tech => tech.toString()) : [];
+    
+    return [...types, ...technologies];  // Returns an array of strings
+  }
 }

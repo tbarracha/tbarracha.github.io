@@ -12,6 +12,7 @@ export class EventService {
   public readonly selectedProjectTypeEvent = new EventEmitter<ProjectType>();
   public readonly selectedProjectEvent = new EventEmitter<Project>();
   public readonly selectNextProjectEvent = new EventEmitter<{leftOrRight: string, project: Project}>();
+  public readonly onMobileMenuClickedEvent = new EventEmitter<boolean>();
 
   constructor() { }
 }

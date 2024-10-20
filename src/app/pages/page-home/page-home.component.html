@@ -1,5 +1,13 @@
 <div #pageHomeComponent class="bg-main-bg dark:bg-dark-bg text-main-secondary-darker dark:text-main-bg">
-    <app-header #header [ngStyle]="{'opacity': headerOpacity}" class="bg-inherit transition-opacity duration-300"></app-header>
+    <!-- [ngStyle]="{'opacity': headerOpacity}" -->
+    <app-header #header
+    class="sticky bg-inherit shadow-lg transition-all duration-300 z-30"
+    [ngClass]="{
+        'top-0' : isTitleVisible,
+        '-top-16': !isTitleVisible
+    }">
+    </app-header>
+    <!-- <app-header #header class="bg-inherit {{ headerOpacityClass }}"></app-header> -->
     <div class="relative flex flex-col bg-inherit h-auto">
         <!-- Section Title occupying most of the screen -->
         <app-section-title #sectionTitle [sectionTitleOptions]="{
@@ -10,14 +18,20 @@
 
         <!-- Project Type Selector fixed at the bottom of the screen -->
         <app-project-type-selector #innerStickyProjectTypeSelector
-            class="bg-inherit h-12 flex items-center z-50 top-0 sticky px-[10%] transition-all duration-300" [ngClass]="{
-                'shadow-lg': isSticky
+            class="bg-inherit h-12 flex items-center z-40 top-0 sticky px-[10%] transition-all duration-300"
+            [ngClass]="{
+                'shadow-lg text-center': !isTitleVisible
             }">
         </app-project-type-selector>
 
+
         <!-- Project List, appears below project type selector -->
-        <app-project-list class="mt-8 px-[10%] min-h-screen"></app-project-list>
+        <app-project-list class="px-[10%] min-h-screen transition-all duration-300"
+        [ngClass]="{
+            'pt-16': !isTitleVisible
+        }"></app-project-list>
     </div>
 </div>
 
 <app-project-modal [componentToPad]="pageHomeComponent"></app-project-modal>
+<app-mobile-menu></app-mobile-menu>

@@ -8,16 +8,19 @@
          alt="Project Image">
     
     <!-- Text overlay -->
-    <div class="absolute inset-0 bg-black bg-opacity-50 p-4 z-10 transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-in-out">
-        <h3 class="font-bold text-lg text-white">{{ project.name }}</h3>
-        <div class="flex space-x-1 text-white">
-            @for(type of project.projectTypes; track type; let last = $last) {
-                <span class="text-sm">{{ type }}{{ last ? '' : ',' }}</span>
-            }
-        </div>
-        <div class="flex space-x-1 text-white mt-2">
-            @for(tech of project.technologies; track tech; let last = $last) {
-                <span class="text-sm">{{ tech }}{{ last ? '' : ',' }}</span>
+    <div class="absolute inset-0 text-white bg-black bg-opacity-50 p-4 z-10 transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-in-out">
+        <h3 class="font-bold
+        text-lg
+        sm:text-md
+        2xl:text-4xl">
+            {{ project.name }}
+        </h3>
+        <div class="flex space-x-1 pt-2
+        text-md
+        sm:text-sm
+        2xl:text-xl">
+            @for(type of getTypesAndTechnologies(); track type; let last = $last) {
+                {{ type }}{{ last ? '' : ',' }}
             }
         </div>
     </div>
