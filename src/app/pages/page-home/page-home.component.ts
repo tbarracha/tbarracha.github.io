@@ -19,6 +19,7 @@ export class PageHomeComponent implements AfterViewInit {
   isSticky: boolean = false;
   initialPosition: number = 0;
   stickyHeaderHeight: number = 0;
+  stickyThreshold: number = 10;
 
   // Listen for scroll events on the window
   @HostListener('window:scroll', ['$event'])
@@ -40,12 +41,21 @@ export class PageHomeComponent implements AfterViewInit {
     this.checkStickyStatus();
   }
 
-  // Manual check for sticky status based on scroll position
   checkStickyStatus() {
-    const scrollY = window.scrollY;
+    if (!this.innerStickyProjectTypeSelector || !this.outerStickyProjectTypeSelector) {
+      console.log("Sticky project type selectors not found");
+      return;
+    }
+  
+    const innerNativeElement = this.innerStickyProjectTypeSelector.elementRef.nativeElement;
+    const outerNativeElement = this.outerStickyProjectTypeSelector.elementRef.nativeElement;
 
-    // Check if the current scroll position has passed the initial top position of the element
-    if (scrollY >= this.initialPosition - this.innerStickyProjectTypeSelector.elementRef.nativeElement.offsetHeight - 4) {
+    const innerRect = innerNativeElement.getBoundingClientRect();
+    const outerRect = outerNativeElement.getBoundingClientRect();
+  
+    // Check if the innerStickyProjectTypeSelector is completely out of view (below the viewport)
+    if (innerRect.top <= innerNativeElement.offsetHeight + this.stickyThreshold) {
+      // If the innerSticky is out of sight or the outer is below the inner
       if (!this.isSticky) {
         this.isSticky = true; // Set sticky state
       }
@@ -55,4 +65,6 @@ export class PageHomeComponent implements AfterViewInit {
       }
     }
   }
+  
+  
 }
