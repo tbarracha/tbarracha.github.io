@@ -1,6 +1,6 @@
-<div #pageHomeComponent class="bg-main-bg">
+<div #pageHomeComponent class="bg-main-bg dark:bg-dark-bg text-main-secondary-darker dark:text-main-bg">
     <app-header class="bg-inherit"></app-header>
-    <div class="relative flex flex-col min-h-screen">
+    <div class="relative flex flex-col min-h-screen bg-inherit">
         <!-- Section Title occupying most of the screen -->
         <app-section-title [sectionTitleOptions]="{
             title: 'Hello!\nI am Tiago Barracha,\nFullstack Developer',
@@ -11,7 +11,7 @@
         <!-- Project Type Selector fixed at the bottom of the screen -->
         <app-project-type-selector #stickyProjectTypeSelector [ngClass]="{
             'shadow-lg h-10': isSticky
-        }" class="z-30 top-12 sticky bg-main-bg">
+        }" class="z-30 top-12 sticky bg-inherit">
         </app-project-type-selector>
 
         <!-- Project List, appears below project type selector -->
