@@ -1,8 +1,8 @@
-<div class="w-full grid grid-cols-3 grid-flow-row p-3 gap-4 min-h-screen">
-    @for(project of projectList; track project.name; let i = $index) {
-        <app-project-card 
-            [project]="project"
-            class="w-full aspect-[4/3]">
-        </app-project-card>
+<div class="flex flex-wrap -mx-2 min-h-screen">
+    @for (project of projectList; track project.name) {
+        <div class="w-1/2 sm:w-1/3 p-2">
+            <app-project-card [project]="project">
+            </app-project-card>
+        </div>
     }
 </div>

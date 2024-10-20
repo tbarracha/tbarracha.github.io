@@ -5,17 +5,17 @@
         <app-section-title [sectionTitleOptions]="{
             title: 'Hello!\nI am Tiago Barracha,\nFullstack Developer',
             subTitle: 'I create web and mobile apps, video games & all things IOT'
-        }" class="flex-grow flex items-center justify-center px-16">
+        }" class="flex-grow flex items-center justify-center px-[10%]">
         </app-section-title>
 
         <!-- Project Type Selector fixed at the bottom of the screen -->
         <app-project-type-selector #stickyProjectTypeSelector [ngClass]="{
             'shadow-lg h-10': isSticky
-        }" class="z-30 top-12 sticky bg-inherit">
+        }" class="bg-inherit z-30 top-12 sticky px-[10%]">
         </app-project-type-selector>
 
         <!-- Project List, appears below project type selector -->
-        <app-project-list class="mt-16  px-16"></app-project-list>
+        <app-project-list class="mt-16  px-[10%]"></app-project-list>
     </div>
 </div>
 
