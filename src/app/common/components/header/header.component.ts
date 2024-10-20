@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ThemeToggleComponent } from "../theme-toggle/theme-toggle.component";
 
@@ -10,5 +10,7 @@ import { ThemeToggleComponent } from "../theme-toggle/theme-toggle.component";
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  
+  constructor(
+    public elementRef: ElementRef
+  ) { }
 }

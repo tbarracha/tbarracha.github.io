@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 
 export interface SectionTitleOptions {
   title: string;
@@ -14,6 +14,12 @@ export interface SectionTitleOptions {
 })
 export class SectionTitleComponent {
   @Input() sectionTitleOptions! : SectionTitleOptions;
+  @ViewChild('title', { static: false }) sectionTitle!: ElementRef;
+  @ViewChild('subTitle', { static: false }) sectionSubTitle!: ElementRef;
 
-
+  constructor(
+    public elementRef: ElementRef
+  ) {
+    
+  }
 }
