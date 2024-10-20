@@ -49,21 +49,11 @@ export class PageHomeComponent implements AfterViewInit {
         // Check if the observed element is the section title
         if (entry.target === this.sectionTitle.sectionTitle.nativeElement) {
           this.isTitleVisible = entry.isIntersecting;
-          if (!this.isTitleVisible) {
-            console.log("Section title is out of view.");
-          } else {
-            console.log("Section title is in view.");
-          }
         }
   
         // Check if the observed element is the section subtitle
         if (entry.target === this.sectionTitle.sectionSubTitle.nativeElement) {
           this.isSubTitleVisible = entry.isIntersecting;
-          if (!this.isSubTitleVisible) {
-            console.log("Section subtitle is out of view.");
-          } else {
-            console.log("Section subtitle is in view.");
-          }
         }
       });
     }, {

@@ -33,8 +33,6 @@ export class ProjectListComponent {
     setTimeout(() => {
       this.animateAllCards();
     }, 120);
-
-    console.log("Selected project type", this.projectService.selectedProjectType);
   }
 
   animateAllCards() {

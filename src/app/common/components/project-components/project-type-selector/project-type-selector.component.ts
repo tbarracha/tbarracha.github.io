@@ -25,6 +25,5 @@ export class ProjectTypeSelectorComponent {
     }
 
     this.eventService.selectedProjectTypeEvent.emit(projectType);
-    console.log("Changed project type to: " + projectType);
   }
 }

@@ -8,17 +8,15 @@
          alt="Project Image">
     
     <!-- Text overlay -->
-    <div class="absolute inset-0 text-white bg-black bg-opacity-50 p-4 z-10 transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-in-out">
-        <h3 class="font-bold
-        text-lg
-        sm:text-md
-        2xl:text-4xl">
+    <div class="absolute inset-0 text-white bg-black bg-opacity-50 z-10 transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-in-out
+    p-2 lg:p-4">
+        <p class="font-bold
+        text-md md:text-xl lg:text-3xl 2xl:text-4xl">
             {{ project.name }}
-        </h3>
-        <div class="flex space-x-1 pt-2
-        text-md
-        sm:text-sm
-        2xl:text-xl">
+        </p>
+        <div class="hidden sm:flex space-x-1 sm:pt-2
+        text-sm sm:text-md md:text-lg lg:text-xl
+        text-ellipsis">
             @for(type of getTypesAndTechnologies(); track type; let last = $last) {
                 {{ type }}{{ last ? '' : ',' }}
             }
