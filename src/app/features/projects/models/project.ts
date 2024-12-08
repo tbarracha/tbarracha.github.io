@@ -19,11 +19,14 @@ export class ProjectCategory extends StaticListModel<string> {
 
 export class ProjectType extends StaticListModel<string> {
     static readonly Featured: string = "Featured";
+    static readonly All: string = "All";
     static readonly Web: string = "Web";
+    static readonly App: string = "App";
     static readonly Mobile: string = "Mobile";
     static readonly Desktop: string = "Desktop";
     static readonly Game: string = "Game";
     static readonly API: string = "API";
     static readonly AI: string = "AI";
     static readonly Tool: string = "Tool";
+    static readonly Other: string = "Other";
 }

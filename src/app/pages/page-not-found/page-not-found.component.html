@@ -1,0 +1,30 @@
+<div class="h-full w-full flex flex-col">
+    <!-- Header -->
+    <app-header></app-header>
+
+    <!-- 404 Section -->
+    <section class="h-[100vh] w-full px-[20%] flex flex-col space-y-16 items-center justify-center
+    font-red-hat-display bg-background text-background-contrast">
+        
+        <!-- 404 Message -->
+        <div class="leading-tight text-center">
+            <h1 class="text-6xl sm:text-7xl font-bold bg-main-gradient bg-clip-text text-transparent">
+                404
+            </h1>
+            <h2 class="text-3xl sm:text-5xl font-bold mt-4">
+                Page Not Found
+            </h2>
+            <p class="text-lg sm:text-xl font-pt-serif mt-6">
+                Sorry, the page you're looking for doesn't exist or has been moved.
+            </p>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex space-x-4">
+            <a href="/" 
+               class="px-6 py-2 rounded-full bg-main-gradient text-primary-contrast text-lg font-semibold shadow-md hover:bg-primary hover:text-primary hover:font-bold transition">
+                Home
+            </a>
+        </div>
+    </section>
+</div>

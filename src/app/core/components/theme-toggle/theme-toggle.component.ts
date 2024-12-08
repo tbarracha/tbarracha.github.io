@@ -31,6 +31,6 @@ export class ThemeToggleComponent {
 
   toggle() {
     console.log('[ThemeToggleComponent] Current theme:', this.themeService.getCurrentTheme());
-    this.themeService.applyThemeByNameIgnoreCase(this.isDarkMode ? 'light' : 'dark');
+    this.themeService.applyThemeSmoothByName(this.isDarkMode ? 'light' : 'dark');
   }
 }

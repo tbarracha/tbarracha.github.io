@@ -8,9 +8,15 @@ flex flex-row items-center">
     <!-- Navigation Links -->
     <div class="flex-1">
         <nav class="flex justify-center space-x-4">
-            <a href="/projects" class="hover:underline">Projects</a>
-            <a href="/about" class="hover:underline">About</a>
-            <a href="/contact" class="hover:underline">Contact</a>
+            <a [routerLink]="['/projects']" routerLinkActive="underline" class="hover:underline">
+                Projects
+            </a>
+            <a [routerLink]="['/about']" routerLinkActive="underline" class="hover:underline">
+                About
+            </a>
+            <a [routerLink]="['/contact']" routerLinkActive="underline" class="hover:underline">
+                Contact
+            </a>
         </nav>
     </div>
 

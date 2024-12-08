@@ -13,8 +13,17 @@ import { GradientButtonComponent } from "../../../../core/components/gradient-bu
 })
 export class ProjectTypeSelectorComponent {
   projectService: ProjectService = inject(ProjectService);
-  projectTypes : string[] = ProjectType.getAll();
   selectedProjectType: string = this.projectService.selectedProjectType;
+
+  projectTypes : string[] = [
+    ProjectType.Featured,
+    ProjectType.All,
+    ProjectType.Web,
+    ProjectType.App,
+    ProjectType.Mobile,
+    ProjectType.Game,
+    ProjectType.Other,
+  ];
 
   ngAfterViewInit() {
     console.log('Project types:', this.projectTypes);

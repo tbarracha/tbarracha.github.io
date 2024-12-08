@@ -8,30 +8,24 @@
 :root {
     /* node theme-sync update */
     /* Theme START */
-    --header: #161722;
-    --header-contrast: #EDF2F4;
+    --background: #EDF2F4;
+    --background-contrast: #161722;
 
-    --background: #161722;
-    --background-contrast: #EDF2F4;
+    --primary: #8D99AE;
+    --primary-contrast: #EDF2F4;
 
-    --footer: #161722;
-    --footer-contrast: #FFFFFF;
+    --secondary: #D5DCE3;
+    --secondary-contrast: #8D99AE;
 
-    --primary: #202232;
-    --primary-contrast: #FFFFFF;
-
-    --secondary: #8D99AE;
-    --secondary-contrast: #FFFFFF;
-
-    --highlight: #EDEDED;
-    --highlight-contrast: #1C1C1C;
+    --highlight: #D5DCE3;
+    --highlight-contrast: #8D99AE;
 
     --accent: #D80032;
     --accent-contrast: #FFFFFF;
 
-    --scrollbar-bg: #202232;
+    --scrollbar-bg: #D5DCE3;
     --scrollbar-thumb: #8D99AE;
-    --scrollbar-thumb-hover: #EDF2F4;
+    --scrollbar-thumb-hover: #B1BBC9;
 
     --success: #84cc16;
     --success-secondary: #d9f99d;
