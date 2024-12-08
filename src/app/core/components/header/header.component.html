@@ -1,10 +1,23 @@
-<header class="w-full h-10 px-side-p">
-    <div class="w-full h-full flex items-center justify-between">
-        <a href="/" class="text-lg font-semibold font-red-hat-display">Tiago Barracha</a>
-        <nav class="flex items-center space-x-4">
-            <a href="/projects" class=" hover:text-gray-800">Projects</a>
-            <a href="/about" class=" hover:text-gray-800">About</a>
-            <a href="/contact" class=" hover:text-gray-800">Contact</a>
+<header class="w-full h-16 px-main-padding
+flex flex-row items-center">
+    <!-- Brand Name -->
+    <div class="flex-1">
+        <a href="/" class="text-lg font-bold font-red-hat-display">Tiago Barracha</a>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="flex-1">
+        <nav class="flex justify-center space-x-4">
+            <a href="/projects" class="hover:underline">Projects</a>
+            <a href="/about" class="hover:underline">About</a>
+            <a href="/contact" class="hover:underline">Contact</a>
         </nav>
+    </div>
+
+    <!-- Theme Toggle -->
+    <div class="flex-1 flex justify-end">
+        <div class="h-full flex justify-center">
+            <app-theme-toggle></app-theme-toggle>
+        </div>
     </div>
 </header>

@@ -1,0 +1,18 @@
+<div class="bg-background text-background-contrast overflow-hidden
+  rounded-full shadow-xl shadow-slate-600/20
+  cursor-pointer"
+  (click)="onClick()">
+  
+  <div class="px-4 py-1 hover:bg-main-gradient hover:text-white"
+       [class.bg-main-gradient]="isSelected"
+       [class.text-transparent]="isSelected"
+       [class.bg-clip-text]="isSelected">
+       
+    <span [class.bg-main-gradient]="isSelected"
+          [class.bg-clip-text]="isSelected"
+          [class.text-transparent]="isSelected"
+          [class.font-bold]="isSelected">
+      {{ text }}
+    </span>
+  </div>
+</div>

@@ -14,7 +14,7 @@
                 <h1 class="text-3xl sm:text-5xl font-bold text-center sm:text-left">
                     Hi, I'm Tiago
                 </h1>
-                <h1 class="text-6xl sm:text-7xl font-bold text-center bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
+                <h1 class="text-6xl sm:text-7xl font-bold text-center bg-main-gradient bg-clip-text text-transparent">
                     Fullstack Developer
                 </h1>
 
@@ -41,22 +41,17 @@
 
 
         <!-- Project Type Selector (sticky) -->
-        <section class="sticky top-0 z-10 py-4 bg-gradient-to-b from-background via-background to-transparent">
-            <div class="max-w-5xl mx-auto px-4 h-full flex items-center justify-center gap-4">
-              <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
-                All
-              </button>
-              <button class="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition">
-                Mobile
-              </button>
-              <button class="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition">
-                Game
-              </button>
+        <section class="sticky top-0 z-10 py-4 h-10">
+            <div class="z-0 absolute -top-1 w-full h-1/2 bg-background">
             </div>
+            <div class="z-0 absolute top-0 w-full h-1/2 bg-background shadow-lg shadow-slate-600/20">
+            </div>
+            <!-- bg-gradient-to-b from-background via-background to-transparent -->
+            <app-project-type-selector></app-project-type-selector>
         </section>
 
         <!-- Project List (scrollable) -->
-        <section class="w-full py-10 px-side-p">
+        <section class="w-full py-10 px-main-padding">
             <div class="w-full mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Project 1 -->

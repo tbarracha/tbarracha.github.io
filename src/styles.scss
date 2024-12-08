@@ -17,10 +17,10 @@
     --footer: #161722;
     --footer-contrast: #FFFFFF;
 
-    --primary: #161722;
+    --primary: #202232;
     --primary-contrast: #FFFFFF;
 
-    --secondary: #2B2B2B;
+    --secondary: #8D99AE;
     --secondary-contrast: #FFFFFF;
 
     --highlight: #EDEDED;
@@ -50,6 +50,7 @@
 /* Custom Scrollbar Styling */
 ::-webkit-scrollbar {
     width: 8px;
+    height: 8px;
 }
 
 // background
@@ -65,3 +66,13 @@
 ::-webkit-scrollbar-thumb:hover {
     background: var(--scrollbar-thumb-hover);
 }
+
+:host {
+    display: inline-block;
+    transition: transform 0.2s;
+  
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  

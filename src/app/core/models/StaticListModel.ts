@@ -6,6 +6,6 @@ export abstract class StaticListModel<T> {
      */
     public static getAll<T>(): T[] {
         return Object.values(this)
-            .filter((value) => typeof value === 'object') as T[];
-    }
+          .filter((value) => typeof value !== 'function') as T[];
+      }
 }

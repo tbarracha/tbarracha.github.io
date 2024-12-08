@@ -52,6 +52,15 @@ export class ThemeService {
     }
   }
 
+  applyThemeByNameIgnoreCase(themeName: string): void {
+    const theme = this.getAllThemes().find((t) => t.name.toLowerCase() === themeName.toLowerCase());
+    if (theme) {
+      this.applyTheme(theme);
+    } else {
+      console.error('[ThemeService] Theme not found:', themeName);
+    }
+  }
+
   private applyTheme(theme: Theme): void {
     if (!theme) {
       console.error('[ThemeService] Invalid theme provided:', theme);

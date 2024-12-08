@@ -37,7 +37,13 @@ module.exports = {
         // Theme END
       },
       spacing: {
-        'side-p': '10%', // px-[10%]
+        'main-padding': '10%', // px-[10%]
+      },
+      boxShadow: {
+        'main-shadow': '0 4px 6px -1px rgba(15, 23, 42, 0.2), 0 2px 4px -1px rgba(15, 23, 42, 0.1)', // Slate shadow
+      },
+      backgroundImage: {
+        'main-gradient': 'linear-gradient(to right, #a855f7, #ec4899, #ef4444)', // Purple to pink to red gradient
       },
     },
   },
