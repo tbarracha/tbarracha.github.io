@@ -2,19 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
 :root {
     /* node theme-sync update */
     /* Theme START */
-    --header: #1C1C1C;
-    --header-contrast: #FFFFFF;
+    --header: #161722;
+    --header-contrast: #EDF2F4;
 
-    --background: #FFFFFF;
-    --background-contrast: #1C1C1C;
+    --background: #161722;
+    --background-contrast: #EDF2F4;
 
-    --footer: #1C1C1C;
+    --footer: #161722;
     --footer-contrast: #FFFFFF;
 
-    --primary: #1C1C1C;
+    --primary: #161722;
     --primary-contrast: #FFFFFF;
 
     --secondary: #2B2B2B;
