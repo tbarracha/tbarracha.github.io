@@ -2,54 +2,62 @@
     <!-- Header -->
     <app-header></app-header>
 
-    <section class="w-full overflow-y-auto"><!-- Hello! -->
-        <section class="h-[60vh] flex flex-col items-center justify-center font-red-hat-display text-center bg-background text-background-contrast px-6">
-          <h1 class="text-4xl sm:text-5xl font-bold mb-4 leading-tight">
-            Hi! I'm Tiago<br />
-            Fullstack Developer
-          </h1>
-          <div class="flex items-center space-x-2 mb-4">
-            <img src="portugal.png" alt="Portugal Flag" class="w-6 h-6" />
-            <p class="text-sm sm:text-base font-pt-serif">Lisbon, Portugal</p>
-          </div>
-          <p class="text-lg sm:text-xl font-pt-serif max-w-2xl">
-            Currently at <span class="font-semibold">Minsait</span> developing AI solutions.
-          </p>
-        </section>
+    <!-- Home Page -->
+    <section class="w-full overflow-y-auto">
 
-        <!-- Tech Stack -->
-        <section class="w-full py-10">
-            <div class="max-w-5xl mx-auto px-4">
-              <div class="flex flex-wrap gap-4">
-                <span class="px-4 py-2 bg-gray-200 rounded-lg text-gray-800">Angular</span>
-                <span class="px-4 py-2 bg-gray-200 rounded-lg text-gray-800">Tailwind CSS</span>
-                <span class="px-4 py-2 bg-gray-200 rounded-lg text-gray-800">TypeScript</span>
-                <span class="px-4 py-2 bg-gray-200 rounded-lg text-gray-800">ASP.NET</span>
-                <span class="px-4 py-2 bg-gray-200 rounded-lg text-gray-800">PostgreSQL</span>
-              </div>
+        <!-- Hero Section -->
+        <section class="h-[100vh] w-full px-[20%] flex flex-col space-y-16 items-center justify-center
+        font-red-hat-display bg-background text-background-contrast">
+            
+            <!-- Hello Section -->
+            <div class="leading-tight">
+                <h1 class="text-3xl sm:text-5xl font-bold text-center sm:text-left">
+                    Hi, I'm Tiago
+                </h1>
+                <h1 class="text-6xl sm:text-7xl font-bold text-center bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
+                    Fullstack Developer
+                </h1>
+
+                <div class="flex items-center justify-center sm:justify-end space-x-2">
+                    <img src="img/portugal.png" alt="Portugal Flag" class="w-8 h-8" />
+                    <p class="text-lg sm:text-xl font-pt-serif">Lisbon, Portugal</p>
+                </div>
+            </div>
+
+            <!-- Tech Stack Section -->
+            <div class="flex items-center justify-between
+            flex-col space-y-4
+            sm:flex-row sm:space-x-8 sm:space-y-0">
+                <div 
+                    *ngFor="let technology of technologies" 
+                    class="flex items-center justify-center">
+                    <app-tech-display
+                        [technology]="technology"
+                        [size]="'small'">
+                    </app-tech-display>
+                </div>
             </div>
         </section>
-  
+
 
         <!-- Project Type Selector (sticky) -->
-<section class="sticky top-0 z-10 py-4 bg-gradient-to-b from-background via-background to-transparent">
-    <div class="max-w-5xl mx-auto px-4 h-full flex items-center justify-center gap-4">
-      <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
-        All
-      </button>
-      <button class="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition">
-        Mobile
-      </button>
-      <button class="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition">
-        Game
-      </button>
-    </div>
-  </section>
+        <section class="sticky top-0 z-10 py-4 bg-gradient-to-b from-background via-background to-transparent">
+            <div class="max-w-5xl mx-auto px-4 h-full flex items-center justify-center gap-4">
+              <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
+                All
+              </button>
+              <button class="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition">
+                Mobile
+              </button>
+              <button class="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition">
+                Game
+              </button>
+            </div>
+        </section>
 
         <!-- Project List (scrollable) -->
         <section class="w-full py-10 px-side-p">
             <div class="w-full mx-auto">
-                <h2 class="text-3xl font-semibold mb-6">Projects</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Project 1 -->
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden">

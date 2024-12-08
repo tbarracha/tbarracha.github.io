@@ -1,0 +1,26 @@
+@if (technology != null) {
+    <div class="h-full w-full flex flex-row items-center">
+        <!-- Icon -->
+        <section>
+            <div 
+              [innerHTML]="getSanitizedIcon()" 
+              [class]="getIconSizeClasses()">
+            </div>
+        </section>
+
+        <!-- Name & Description -->
+        <section class="h-full flex flex-col ml-4">
+            <h3 
+              [class]="getHeaderTextSizeClasses() + ' font-semibold'">
+              {{ technology.name }}
+            </h3>
+            <p 
+              [class]="getParagraphTextSizeClasses()">
+              {{ technology.description }}
+            </p>
+        </section>
+    </div>
+}
+@else {
+    <p>Technology not found</p>
+}
