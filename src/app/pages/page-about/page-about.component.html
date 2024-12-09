@@ -3,86 +3,108 @@
     <app-header></app-header>
 
     <!-- About Page -->
-    <section class="w-full overflow-y-auto">
-
-        <!-- About Hero Section -->
-        <section class="h-[100vh] w-full px-[20%] flex flex-col space-y-16 items-center justify-center
-        bg-background text-background-contrast">
+    <section class="w-full py-16
+    flex flex-col space-y-8
+    bg-background text-background-contrast
+    overflow-y-auto">
+            <!-- Tech Stack -->
+            <div class="">
+                <!-- Title -->
+                <app-gradient-title [title]="'Tech Stack'"></app-gradient-title>
             
-            <!-- Introduction Section -->
-            <div class="text-center leading-tight font-red-hat-display">
-                <h1 class="text-6xl sm:text-7xl font-bold bg-main-gradient bg-clip-text text-transparent">
-                    Making cool stuff that <span class="italic font-pt-serif">works</span> and <span class="italic font-pt-serif">wows</span>.
-                </h1>
+                <!-- Tech Stack Section -->
+                <section class="w-full py-16 px-[20%] text-primary">
+                    <div class="flex flex-col space-y-4">
+                        <!-- Frontend -->
+                        <div class="space-y-4">
+                            <div class="grid grid-cols-4 gap-4">
+                                <h3 class="text-xl font-semibold">Frontend</h3>
+                                <app-tech-display
+                                    *ngFor="let technology of techFront"
+                                    class="w-full h-16 border border-primary rounded-lg p-4"
+                                    [technology]="technology"
+                                    [size]="'small'">
+                                </app-tech-display>
+                            </div>
+                        </div>
+        
+                        <!-- Backend -->
+                        <div class="space-y-4">
+                            <div class="grid grid-cols-4 gap-4">
+                                <h3 class="text-xl font-semibold">Backend</h3>
+                                <app-tech-display
+                                    *ngFor="let technology of techBack"
+                                    class="w-full h-16 border border-primary rounded-lg p-4"
+                                    [technology]="technology"
+                                    [size]="'small'">
+                                </app-tech-display>
+                            </div>
+                        </div>
+        
+                        <!-- Miscellaneous -->
+                        <div class="space-y-4">
+                            <div class="grid grid-cols-4 gap-4">
+                                <h3 class="text-xl font-semibold">Misc</h3>
+                                <app-tech-display
+                                    *ngFor="let technology of techMisc"
+                                    class="w-full h-16 border border-primary rounded-lg p-4"
+                                    [technology]="technology"
+                                    [size]="'small'">
+                                </app-tech-display>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
 
-            <!-- Tech Stack Section -->
-             <div class="flex flex-col space-y-2">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-primary">
-                    <div 
-                        *ngFor="let technology of technologiesMain" 
-                        class="flex items-center justify-center">
-                        <app-tech-display
-                            class="w-full h-16 border border-primary rounded-lg p-2"
-                            [technology]="technology"
-                            [size]="'small'">
-                        </app-tech-display>
+            <!-- Work Ttile -->
+            <app-gradient-title [title]="'Experience'"></app-gradient-title>
+            
+            <!-- Experience Section -->
+            <div class=" py-16 space-y-8 px-4 sm:px-[20%]">
+                <div *ngFor="let expGroup of experiencesWork" class="grid grid-cols-[auto,auto,1fr] gap-8">
+                    <!-- Year Column -->
+                    <div class="text-right text-lg font-semibold w-24">
+                        {{ expGroup.year }}
                     </div>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-primary">
-                    <div 
-                        *ngFor="let technology of technologiesSecondary" 
-                        class="flex items-center justify-center">
-                        <app-tech-display
-                            class="w-full h-16 border border-primary rounded-lg p-2"
-                            [technology]="technology"
-                            [size]="'small'">
-                        </app-tech-display>
+                    
+                    <!-- Line -->
+                    <div class="h-full w-[1px] bg-highlight">
                     </div>
-                </div>
-             </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section class="w-full py-16 px-[10%] bg-background text-background-contrast">
-            <h2 class="text-3xl sm:text-5xl font-bold text-center mb-8">
-                Experience
-            </h2>
-            <div class="space-y-8">
-                <!-- Experience 1 -->
-                <div>
-                    <h3 class="text-2xl font-semibold">AI Consultant at Minsait</h3>
-                    <p class="text-lg">
-                        Spearheaded high-impact AI innovations—think 3D avatar chatbots, automated documentation, and ultra-secure, on-site language models for sensitive data.
-                    </p>
-                </div>
-
-                <!-- Experience 2 -->
-                <div>
-                    <h3 class="text-2xl font-semibold">Fullstack Developer at Minsait</h3>
-                    <p class="text-lg">
-                        Engineered project development with Angular and ASP.NET Core, driving modernization for platforms at EDP Renewables, Santander, and internal projects.
-                    </p>
-                </div>
-
-                <!-- Experience 3 -->
-                <div>
-                    <h3 class="text-2xl font-semibold">Game Developer at The Gang Sweden</h3>
-                    <p class="text-lg">
-                        Elevated user experience by designing AI and dialogue systems for big names like FIFA and iHeartRadio.
-                    </p>
-                </div>
-
-                <!-- Experience 4 -->
-                <div>
-                    <h3 class="text-2xl font-semibold">Unity Developer at Swisper</h3>
-                    <p class="text-lg">
-                        Innovated in health tech by developing immersive spatial audio and a breathing aid for users focused on well-being.
-                    </p>
+        
+                    <!-- Experiences Column -->
+                    <div class="space-y-4">
+                        <div *ngFor="let experience of expGroup.sections">
+                            <h3 class="text-2xl font-semibold" [innerHTML]="experience.title"></h3>
+                            <p class="text-lg text-primary" [innerHTML]="experience.description"></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
-
+            
+            <!-- Education Title -->
+            <app-gradient-title [title]="'Education'"></app-gradient-title>
+            
+            <!-- Experience Section -->
+            <div class="py-16 space-y-8 px-4 sm:px-[20%]">
+                <div *ngFor="let expGroup of experiencesEducation" class="grid grid-cols-[auto,auto,1fr] gap-8">
+                    <!-- Year Column -->
+                    <div class="text-right text-lg font-semibold w-24">
+                        {{ expGroup.year }}
+                    </div>
+                    
+                    <!-- Line -->
+                    <div class="h-full w-[1px] bg-highlight">
+                    </div>
+        
+                    <!-- Experiences Column -->
+                    <div class="space-y-4">
+                        <div *ngFor="let experience of expGroup.sections">
+                            <h3 class="text-2xl font-semibold" [innerHTML]="experience.title"></h3>
+                            <p class="text-lg text-primary" [innerHTML]="experience.description"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>       
     </section>
 </div>

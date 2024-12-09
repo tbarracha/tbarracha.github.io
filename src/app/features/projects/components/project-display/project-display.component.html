@@ -1,1 +1,60 @@
-<p>project-display works!</p>
+<!-- Project Image -->
+<div class="rounded-lg shadow-xl shadow-slate-600/20 overflow-hidden">
+    <img
+        [src]="project.images?.[0]"
+        [alt]="project.name"
+        class="w-full h-48 object-cover"
+        *ngIf="project.images?.length; else noImage"
+    >
+    <ng-template #noImage>
+        <div class="w-full h-48 flex items-center justify-center bg-secondary text-primary">
+            No Image Available
+        </div>
+    </ng-template>
+</div>
+
+<!-- Project Details -->
+<div class="p-4">
+    <!-- Project Title -->
+    <h3 class="text-xl font-semibold text-primary">{{ project.name }}</h3>
+    
+    <!-- Project Employer -->
+    <p class="text-primary text-sm mt-1">{{ project.employer }}</p>
+    
+    <!-- Links Section -->
+    <!--
+    <div class="mt-4 flex space-x-2">
+        <a 
+            *ngFor="let link of project.links" 
+            [href]="link.url" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="text-primary hover:underline flex items-center space-x-1"
+        >
+            <span 
+                class="inline-block w-6 h-6" 
+                [innerHTML]="sanitizeIcon(link.icon)"
+                *ngIf="link.icon">
+            </span>
+            <span>{{ link.name }}</span>
+        </a>
+    </div>
+    -->
+
+    <!-- Technologies Section -->
+    <!--
+    <div class="mt-4 flex flex-wrap gap-2">
+        <span 
+            *ngFor="let tech of project.technologies" 
+            class="inline-flex items-center bg-highlight text-highlight-contrast text-sm px-2 py-1 rounded-lg"
+        >
+            <span 
+                class="inline-block w-4 h-4 mr-1"
+                [innerHTML]="sanitizeIcon(tech.icon)"
+                *ngIf="tech.icon">
+            </span>
+            {{ tech.name }}
+        </span>
+    </div>
+    -->
+</div>

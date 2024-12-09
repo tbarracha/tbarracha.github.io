@@ -30,7 +30,7 @@ export class ThemeToggleComponent {
   }
 
   toggle() {
-    console.log('[ThemeToggleComponent] Current theme:', this.themeService.getCurrentTheme());
+    //console.log('[ThemeToggleComponent] Current theme:', this.themeService.getCurrentTheme());
     this.themeService.applyThemeSmoothByName(this.isDarkMode ? 'light' : 'dark');
   }
 }

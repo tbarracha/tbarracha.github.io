@@ -19,15 +19,13 @@
                 </h1>
 
                 <div class="flex items-center justify-center sm:justify-end space-x-2">
-                    <img src="img/portugal.png" alt="Portugal Flag" class="w-8 h-8" />
+                    <img src="images/portugal.png" alt="Portugal Flag" class="w-8 h-8" />
                     <p class="text-lg sm:text-xl font-pt-serif">Lisbon, Portugal</p>
                 </div>
             </div>
 
             <!-- Tech Stack Section -->
-            <div class="flex items-center justify-between
-            flex-col space-y-4 text-primary
-            sm:flex-row sm:space-x-16 sm:space-y-0">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-primary">
                 <div 
                     *ngFor="let technology of technologies" 
                     class="flex items-center justify-center">
@@ -38,6 +36,7 @@
                     </app-tech-display>
                 </div>
             </div>
+
         </section>
 
 
@@ -54,107 +53,8 @@
         </section>
 
         <!-- Project List (scrollable) -->
-        <section class="w-full py-10 px-main-padding">
-            <div class="w-full mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Project 1 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://via.placeholder.com/300" alt="Project 1" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h3 class="text-xl font-semibold text-gray-800">Mobile App</h3>
-                            <p class="text-gray-600 mt-2">A mobile app for managing tasks and schedules.</p>
-                        </div>
-                    </div>
-                    <!-- Project 2 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://via.placeholder.com/300" alt="Project 2" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h3 class="text-xl font-semibold text-gray-800">Game Project</h3>
-                            <p class="text-gray-600 mt-2">A multiplayer game built with Unity.</p>
-                        </div>
-                    </div>
-                    <!-- Project 3 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://via.placeholder.com/300" alt="Project 3" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h3 class="text-xl font-semibold text-gray-800">Web Dashboard</h3>
-                            <p class="text-gray-600 mt-2">A responsive dashboard for analytics and data visualization.</p>
-                        </div>
-                    </div>
-                    <!-- Project 1 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://via.placeholder.com/300" alt="Project 1" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h3 class="text-xl font-semibold text-gray-800">Mobile App</h3>
-                            <p class="text-gray-600 mt-2">A mobile app for managing tasks and schedules.</p>
-                        </div>
-                    </div>
-                    <!-- Project 2 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://via.placeholder.com/300" alt="Project 2" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h3 class="text-xl font-semibold text-gray-800">Game Project</h3>
-                            <p class="text-gray-600 mt-2">A multiplayer game built with Unity.</p>
-                        </div>
-                    </div>
-                    <!-- Project 3 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://via.placeholder.com/300" alt="Project 3" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h3 class="text-xl font-semibold text-gray-800">Web Dashboard</h3>
-                            <p class="text-gray-600 mt-2">A responsive dashboard for analytics and data visualization.</p>
-                        </div>
-                    </div>
-                    <!-- Project 1 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://via.placeholder.com/300" alt="Project 1" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h3 class="text-xl font-semibold text-gray-800">Mobile App</h3>
-                            <p class="text-gray-600 mt-2">A mobile app for managing tasks and schedules.</p>
-                        </div>
-                    </div>
-                    <!-- Project 2 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://via.placeholder.com/300" alt="Project 2" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h3 class="text-xl font-semibold text-gray-800">Game Project</h3>
-                            <p class="text-gray-600 mt-2">A multiplayer game built with Unity.</p>
-                        </div>
-                    </div>
-                    <!-- Project 3 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://via.placeholder.com/300" alt="Project 3" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h3 class="text-xl font-semibold text-gray-800">Web Dashboard</h3>
-                            <p class="text-gray-600 mt-2">A responsive dashboard for analytics and data visualization.</p>
-                        </div>
-                    </div>
-                    <!-- Project 1 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://via.placeholder.com/300" alt="Project 1" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h3 class="text-xl font-semibold text-gray-800">Mobile App</h3>
-                            <p class="text-gray-600 mt-2">A mobile app for managing tasks and schedules.</p>
-                        </div>
-                    </div>
-                    <!-- Project 2 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://via.placeholder.com/300" alt="Project 2" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h3 class="text-xl font-semibold text-gray-800">Game Project</h3>
-                            <p class="text-gray-600 mt-2">A multiplayer game built with Unity.</p>
-                        </div>
-                    </div>
-                    <!-- Project 3 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://via.placeholder.com/300" alt="Project 3" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h3 class="text-xl font-semibold text-gray-800">Web Dashboard</h3>
-                            <p class="text-gray-600 mt-2">A responsive dashboard for analytics and data visualization.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <section class="w-full py-10 min-h-[100vh]">
+            <app-project-list></app-project-list>
         </section>
     </section>
 </div>

@@ -1,0 +1,8 @@
+<!-- Project List (scrollable) -->
+<section class="w-full py-10 px-main-padding">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        @for (project of projects; track $index) {
+            <app-project-display [project]="project"></app-project-display>
+        }
+    </div>
+</section>

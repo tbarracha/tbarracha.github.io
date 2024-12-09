@@ -5,7 +5,8 @@ export abstract class StaticListModel<T> {
      * @returns An array of items of type T.
      */
     public static getAll<T>(): T[] {
-        return Object.values(this)
-          .filter((value) => typeof value !== 'function') as T[];
-      }
+        return Object.values(this).filter((value) => {
+            return typeof value !== 'function';
+        }) as T[];
+    }
 }

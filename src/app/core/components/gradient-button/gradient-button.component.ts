@@ -54,6 +54,6 @@ export class GradientButtonComponent implements AfterViewInit, OnChanges {
   }
 
   onClick(): void {
-    console.log('Button clicked:', this.text);
+    //console.log('Button clicked:', this.text);
   }
 }

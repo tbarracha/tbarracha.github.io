@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
-import { ProjectType } from '../../models/project';
 import { CommonModule } from '@angular/common';
 import { BaseProjectComponent } from '../baseProjectComponent';
 import { ProjectService } from '../../service/project.service';
 import { GradientButtonComponent } from "../../../../core/components/gradient-button/gradient-button.component";
+import { ProjectType } from '../../../../core/models/project';
 
 @Component({
   selector: 'app-project-type-selector',
@@ -30,7 +30,6 @@ export class ProjectTypeSelectorComponent {
   }
 
   onClick(projectType: string) {
-    console.log('Project type button clicked:', projectType);
     this.selectedProjectType = projectType;
     this.projectService.selectProjectType(projectType);
   }

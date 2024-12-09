@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { Technology } from '../models/technologies';
+import { Technology } from '../../../core/models/technologies';
 
 @Component({
   selector: 'app-tech-display',

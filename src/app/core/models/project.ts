@@ -1,20 +1,16 @@
-import { StaticListModel } from "../../../core/models/StaticListModel";
-import { Technology } from "../../technologies/models/technologies";
+import { StaticListModel } from "../../core/models/StaticListModel";
+import { Technology } from "../../core/models/technologies";
 
 export interface Project {
     name: string;
-    description: string;
-    year: number;
+    date: string;
     employer: string;
-    client: string;
-    category: ProjectCategory;
+    sections: { title: string, content: string }[];
     types: string[];
     technologies: Technology[];
-}
-
-export class ProjectCategory extends StaticListModel<string> {
-    static readonly Work: string = "Work";
-    static readonly Play: string = "Play";
+    links: { name: string, icon: string, url: string }[];
+    imgFolder: string;
+    images?: string[];
 }
 
 export class ProjectType extends StaticListModel<string> {
