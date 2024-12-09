@@ -4,18 +4,18 @@
         <section>
             <div 
               [innerHTML]="getSanitizedIcon()" 
-              [class]="getIconSizeClasses()">
+              class="h-8 w-8">
             </div>
         </section>
 
         <!-- Name & Description -->
-        <section class="h-full flex flex-col ml-4">
+        <section class="h-full flex flex-col pl-2">
             <h3 
-              [class]="getHeaderTextSizeClasses() + ' font-semibold'">
+              class="font-semibold text-sm">
               {{ technology.name }}
             </h3>
             <p 
-              [class]="getParagraphTextSizeClasses()">
+              class="text-xs">
               {{ technology.description }}
             </p>
         </section>

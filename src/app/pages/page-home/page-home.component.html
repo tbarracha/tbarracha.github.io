@@ -27,11 +27,12 @@
             <!-- Tech Stack Section -->
             <div class="flex items-center justify-between
             flex-col space-y-4 text-primary
-            sm:flex-row sm:space-x-8 sm:space-y-0">
+            sm:flex-row sm:space-x-16 sm:space-y-0">
                 <div 
                     *ngFor="let technology of technologies" 
                     class="flex items-center justify-center">
                     <app-tech-display
+                        class="w-full h-16 border border-primary rounded-lg p-4"
                         [technology]="technology"
                         [size]="'small'">
                     </app-tech-display>
