@@ -11,14 +11,17 @@
             
             <!-- Hello Section -->
             <div class="leading-tight">
-                <h1 class="text-3xl sm:text-5xl font-bold text-center sm:text-left">
+                <h1 class="text-3xl text-left  font-bold sm:text-5xl">
                     Hi, I'm Tiago
                 </h1>
-                <h1 class="text-6xl sm:text-7xl font-bold text-center bg-main-gradient bg-clip-text text-transparent">
-                    Fullstack Developer
-                </h1>
+                <div class="flex text-6xl font-bold bg-main-gradient bg-clip-text text-transparent text-left
+                flex-col space-x-0
+                sm:flex-row sm:space-x-4 sm:space-y-0
+                sm:text-7xl sm:text-center">
+                    <span>Fullstack</span> <span>Developer</span>
+                </div>
 
-                <div class="flex items-center justify-center sm:justify-end space-x-2">
+                <div class="flex items-center justify-end space-x-2">
                     <img src="images/portugal.png" alt="Portugal Flag" class="w-8 h-8" />
                     <p class="text-lg sm:text-xl font-pt-serif">Lisbon, Portugal</p>
                 </div>
@@ -26,7 +29,7 @@
 
             <!-- Tech Stack Section -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-primary">
-                <div 
+                <div
                     *ngFor="let technology of technologies" 
                     class="flex items-center justify-center">
                     <app-tech-display
@@ -43,7 +46,7 @@
         <!-- Project Section Here -->
 
         <!-- Project Type Selector (sticky) -->
-        <section class="sticky top-0 z-10 py-4 h-10">
+        <section class="sticky top-0 z-10 py-4 h-10 w-full">
             <div class="z-0 absolute -top-1 w-full h-1/2 bg-background">
             </div>
             <div class="z-0 absolute top-0 w-full h-1/2 bg-background shadow-lg shadow-slate-600/20">
