@@ -90,7 +90,7 @@ export class Projects extends StaticListModel<Project> {
         technologies: [Technologies.Angular, Technologies.Typescript, Technologies.TailwindCss, Technologies.Netlify],
         links: [
             {
-                name: 'Website',
+                name: 'Live Demo',
                 url: 'https://pokecatalogue.netlify.app/',
                 icon: Icons.Internet
             },
@@ -187,7 +187,7 @@ export class Projects extends StaticListModel<Project> {
         technologies: [Technologies.Angular, Technologies.Typescript, Technologies.TailwindCss, Technologies.Netlify],
         links: [
             {
-                name: 'Website',
+                name: 'Live Demo',
                 url: 'https://tiagobarracha.netlify.app/',
                 icon: Icons.Netlify
             }
@@ -263,13 +263,13 @@ export class Projects extends StaticListModel<Project> {
 
     
     public static readonly FifaFootblocks: Project = {
-        name: 'Fifa Footblocks',
+        name: 'FIFA Footblocks',
         date: "2023",
-        employer: 'The Gang Sweden',
+        employer: 'The Gang Sweden, FIFA',
         sections: [
             {
                 title: "Premise",
-                content: `While at <a href="https://www.thegang.io/" target="_blank" rel="noopener noreferrer" class="text-main-hl-primary hover:underline">The Gang Sweden</a>, I took on the challenge of developing the Goalkeeper AI for Fifa Footblocks, a popular Roblox game.
+                content: `While at <a href="https://www.thegang.io/" target="_blank" rel="noopener noreferrer" class="bg-main-gradient bg-clip-text text-transparent hover:underline">The Gang Sweden</a>, I took on the challenge of developing the Goalkeeper AI for Fifa Footblocks, a popular Roblox game.
                 
                 It was all about capturing the thrill of the sport while delivering reliable, smart AI!`
             }
@@ -299,11 +299,11 @@ export class Projects extends StaticListModel<Project> {
     public static readonly IHeartRadioTycoon: Project = {
         name: 'iHeart Radio Tycoon',
         date: "2023",
-        employer: 'The Gang Sweden',
+        employer: 'The Gang Sweden, iHeart Radio',
         sections: [
             {
                 title: "Premise",
-                content: `Working on <a href="https://www.thegang.io/" target="_blank" rel="noopener noreferrer" class="text-main-hl-primary hover:underline">The Gang Sweden's</a> team, I crafted interactive NPCs, scavenger hunts, enemy AI, and combat systems for iHeart Radio Tycoon.
+                content: `Working on <a href="https://www.thegang.io/" target="_blank" rel="noopener noreferrer" class="bg-main-gradient bg-clip-text text-transparent hover:underline">The Gang Sweden's</a> team, I crafted interactive NPCs, scavenger hunts, enemy AI, and combat systems for iHeart Radio Tycoon.
                 
                 The game combines engaging gameplay with the recognizable iHeart brand in an exciting, player-centered experience!`
             }
@@ -333,13 +333,13 @@ export class Projects extends StaticListModel<Project> {
     };
     
     public static readonly GucciTown: Project = {
-        name: 'Gucci Town',
+        name: 'Gucci Town, Gucci',
         date: "2023",
         employer: 'The Gang Sweden',
         sections: [
             {
                 title: "Premise",
-                content: `On this project with <a href="https://www.thegang.io/" target="_blank" rel="noopener noreferrer" class="text-main-hl-primary hover:underline">The Gang Sweden</a>, I was responsible for NPC interactions, scavenger hunts, and a soccer minigame in Gucci Town, merging luxury branding with immersive gaming experiences.`
+                content: `On this project with <a href="https://www.thegang.io/" target="_blank" rel="noopener noreferrer" class="bg-main-gradient bg-clip-text text-transparent hover:underline">The Gang Sweden</a>, I was responsible for NPC interactions, scavenger hunts, and a soccer minigame in Gucci Town, merging luxury branding with immersive gaming experiences.`
             }
         ],
         types: [ProjectType.Game],

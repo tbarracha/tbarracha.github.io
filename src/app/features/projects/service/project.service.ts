@@ -51,8 +51,6 @@ export class ProjectService {
 
     if (this.selectedProjectList.length === 0) {
       console.warn(`No projects found for type: ${this.selectedProjectType}`);
-    } else {
-      console.log(`Selected projects updated for type "${this.selectedProjectType}":`, this.selectedProjectList);
     }
   }
 

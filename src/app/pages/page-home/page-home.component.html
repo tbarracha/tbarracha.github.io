@@ -6,7 +6,7 @@
     <section class="w-full overflow-y-auto">
 
         <!-- Hero Section -->
-        <section class="h-[100vh] w-full px-[20%] flex flex-col space-y-16 items-center justify-center
+        <section class="h-[calc(100vh-theme(spacing.header-height))] w-full px-[20%] flex flex-col space-y-16 items-center justify-center
         font-red-hat-display bg-background text-background-contrast">
             
             <!-- Hello Section -->
@@ -56,8 +56,8 @@
         </section>
 
         <!-- Project List (scrollable) -->
-        <section class="w-full py-10 min-h-[100vh]">
+        <section class="w-full py-10 min-h-[calc(100vh-theme(spacing.header-height))]">
             <app-project-list></app-project-list>
-        </section>
+        </section>        
     </section>
 </div>
