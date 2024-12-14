@@ -1,11 +1,11 @@
 <div 
     *ngIf="project"
-    class="h-screen w-screen fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
+    class="h-full w-full fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
     (click)="closeModal()"
 >
     <!-- Modal Content -->
     <div 
-        class="relative bg-main-light text-main-dark rounded-xl overflow-hidden shadow-xl w-[95%] h-[90%] flex flex-col sm:flex-row"
+        class="relative bg-main-light text-main-dark rounded-xl overflow-hidden shadow-xl w-full h-[90%] mx-8 md:mx-16"
         (click)="$event.stopPropagation()"
     >
         <!-- Close Button -->
@@ -15,116 +15,119 @@
             [innerHTML]="iconService.getSanitizedIcon(iconService.icons.Close)"
         ></button>
 
-        <!-- Image Viewer Section -->
-        <div 
-            class="relative flex-none h-2/5 sm:h-full sm:w-3/5 bg-gray-100"
-        >
-            <!-- Previous Image Button -->
-            <button
-                class="absolute top-0 left-0 h-full w-12 flex items-center justify-center
-                text-transparent hover:text-highlight
-                hover:bg-gradient-to-r hover:from-black/30 hover:to-transparent
-                transition-all duration-300"
-                (click)="previousImage()"
-                *ngIf="project.images && project.images.length > 1"
-                [innerHTML]="iconService.getSanitizedIcon(iconService.icons.ArrowLeft)"
-            ></button>
+        <div class="w-full h-full flex flex-col md:flex-row">
 
-            <!-- Image Display -->
-            <img
-                [src]="project.images?.[currentImageIndex]"
-                [alt]="project.name"
-                class="w-full h-full object-cover"
-                *ngIf="project.images?.length; else noImage"
+            <!-- Image Viewer Section -->
+            <div 
+                class="relative flex-none h-3/5 md:h-full md:w-3/5"
             >
-
-            <!-- Next Image Button -->
-            <button
-                class="absolute top-0 right-0 h-full w-12 flex items-center justify-center
-                text-transparent hover:text-highlight
-                hover:bg-gradient-to-l hover:from-black/30 hover:to-transparent
-                transition-all duration-300"
-                (click)="nextImage()"
-                *ngIf="project.images && project.images.length > 1"
-                [innerHTML]="iconService.getSanitizedIcon(iconService.icons.ArrowRight)"
-            ></button>
-
-            <ng-template #noImage>
-                <div class="w-full h-full flex items-center justify-center bg-gray-300 text-primary">
-                    No Image Available
-                </div>
-            </ng-template>
-        </div>
-
-        <!-- Project Details Section -->
-        <div class="relative flex flex-col sm:w-2/5">
-            <!-- Project Title -->
-            <div class="px-6 pt-6">
-                <h3 class="text-2xl font-semibold text-primary mb-4">{{ project.name }}</h3>
-                <p class="text-sm">{{ project.date }} | {{ project.employer }}</p>
+                <!-- Previous Image Button -->
+                <button
+                    class="absolute top-0 left-0 h-full w-12 flex items-center justify-center
+                    text-transparent hover:text-highlight
+                    hover:bg-gradient-to-r hover:from-black/30 hover:to-transparent
+                    transition-all duration-300"
+                    (click)="previousImage()"
+                    *ngIf="project.images && project.images.length > 1"
+                    [innerHTML]="iconService.getSanitizedIcon(iconService.icons.ArrowLeft)"
+                ></button>
+    
+                <!-- Image Display -->
+                <img
+                    [src]="project.images?.[currentImageIndex]"
+                    [alt]="project.name"
+                    class="w-full h-full object-cover"
+                    *ngIf="project.images?.length; else noImage"
+                >
+    
+                <!-- Next Image Button -->
+                <button
+                    class="absolute top-0 right-0 h-full w-12 flex items-center justify-center
+                    text-transparent hover:text-highlight
+                    hover:bg-gradient-to-l hover:from-black/30 hover:to-transparent
+                    transition-all duration-300"
+                    (click)="nextImage()"
+                    *ngIf="project.images && project.images.length > 1"
+                    [innerHTML]="iconService.getSanitizedIcon(iconService.icons.ArrowRight)"
+                ></button>
+    
+                <ng-template #noImage>
+                    <div class="w-full h-full flex items-center justify-center bg-gray-300 text-primary">
+                        No Image Available
+                    </div>
+                </ng-template>
             </div>
-
+    
             <!-- Project Details Section -->
-            <div class="overflow-y-auto p-6 flex-grow">
-
-                <!-- Technologies -->
-                <div class="flex flex-wrap gap-2 mb-6">
-                    <span
-                        *ngFor="let tech of project.technologies"
-                        class="inline-flex items-center text-highlight-contrast text-sm px-2 py-1 rounded-lg border border-highlight"
-                    >
-                        <span 
-                            class="inline-block w-4 h-4 mr-1"
-                            [innerHTML]="iconService.getSanitizedIcon(tech.icon)"
-                            *ngIf="tech.icon"
-                        ></span>
-                        {{ tech.name }}
-                    </span>
+            <div class="relative flex-grow flex flex-col">
+                <!-- Project Title -->
+                <div class="px-6 pt-6">
+                    <h3 class="text-2xl font-semibold text-primary mb-4">{{ project.name }}</h3>
+                    <p class="text-sm">{{ project.date }} | {{ project.employer }}</p>
                 </div>
     
-                <!-- Project Sections -->
-                <div class="space-y-6 mb-6">
-                    <div *ngFor="let section of project.sections">
-                        <h4 class="text-lg font-semibold mb-2">{{ section.title }}</h4>
-                        <p class="whitespace-pre-line" [innerHTML]="section.content"></p>
-                    </div>
-                </div>
-
-                <!-- Project Links -->
-                <div *ngIf="project.links?.length" class="mb-6">
-                    <div class="flex flex-wrap gap-2">
-                        <a
-                            *ngFor="let link of project.links"
-                            [href]="link.url"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="px-2 py-1 text-highlight-contrast hover:underline transition-all duration-300 rounded-lg flex items-center gap-2"
+                <!-- Project Details Section -->
+                <div class="p-6 flex-grow overflow-y-auto">
+    
+                    <!-- Technologies -->
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span
+                            *ngFor="let tech of project.technologies"
+                            class="inline-flex items-center text-highlight-contrast text-sm px-2 py-1 rounded-lg border border-highlight"
                         >
                             <span 
-                                *ngIf="link.icon"
-                                class="w-5 h-5"
-                                [innerHTML]="iconService.getSanitizedIcon(link.icon)"
+                                class="inline-block w-4 h-4 mr-1"
+                                [innerHTML]="iconService.getSanitizedIcon(tech.icon)"
+                                *ngIf="tech.icon"
                             ></span>
-                            {{ link.name }}
-                        </a>
+                            {{ tech.name }}
+                        </span>
+                    </div>
+        
+                    <!-- Project Sections -->
+                    <div class="space-y-6 mb-6">
+                        <div *ngFor="let section of project.sections">
+                            <h4 class="text-lg font-semibold mb-2">{{ section.title }}</h4>
+                            <p class="whitespace-pre-line" [innerHTML]="section.content"></p>
+                        </div>
+                    </div>
+    
+                    <!-- Project Links -->
+                    <div *ngIf="project.links?.length" class="mb-6">
+                        <div class="flex flex-wrap gap-2">
+                            <a
+                                *ngFor="let link of project.links"
+                                [href]="link.url"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="px-2 py-1 text-highlight-contrast hover:underline transition-all duration-300 rounded-lg flex items-center gap-2"
+                            >
+                                <span 
+                                    *ngIf="link.icon"
+                                    class="w-5 h-5"
+                                    [innerHTML]="iconService.getSanitizedIcon(link.icon)"
+                                ></span>
+                                {{ link.name }}
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Navigation Buttons -->
-            <div class="w-full flex justify-between text-highlight">
-                <button 
-                    class="px-4 py-2 bg-main-dark hover:bg-main-gradient rounded-tr-lg"
-                    (click)="fetchPreviousProject()"
-                >
-                    Prev
-                </button>
-                <button 
-                    class="px-4 py-2 bg-main-dark hover:bg-main-gradient rounded-tl-lg"
-                    (click)="fetchNextProject()"
-                >
-                    Next
-                </button>
+    
+                <!-- Navigation Buttons -->
+                <div class="w-full flex justify-between text-highlight">
+                    <button 
+                        class="px-4 py-2 bg-main-dark hover:bg-main-gradient rounded-tr-lg"
+                        (click)="fetchPreviousProject()"
+                    >
+                        Prev
+                    </button>
+                    <button 
+                        class="px-4 py-2 bg-main-dark hover:bg-main-gradient rounded-tl-lg"
+                        (click)="fetchNextProject()"
+                    >
+                        Next
+                    </button>
+                </div>
             </div>
         </div>
     </div>
