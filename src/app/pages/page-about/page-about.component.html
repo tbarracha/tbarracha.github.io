@@ -7,8 +7,9 @@
     flex flex-col space-y-8
     bg-background text-background-contrast
     overflow-y-auto">
+    
             <!-- Tech Stack -->
-            <div class="">
+            <section class="">
                 <!-- Title -->
                 <app-gradient-title [title]="'Tech Stack'"></app-gradient-title>
             
@@ -55,13 +56,13 @@
                         </div>
                     </div>
                 </section>
-            </div>
+            </section>
 
             <!-- Work Ttile -->
             <app-gradient-title [title]="'Experience'"></app-gradient-title>
             
             <!-- Experience Section -->
-            <div class=" py-16 space-y-8 px-4 sm:px-[20%]">
+            <section class=" py-16 space-y-8 px-4 sm:px-[20%]">
                 <div *ngFor="let expGroup of experiencesWork" class="grid grid-cols-[auto,auto,1fr] gap-8">
                     <!-- Year Column -->
                     <div class="text-right text-lg font-semibold w-24">
@@ -80,13 +81,13 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
             
             <!-- Education Title -->
             <app-gradient-title [title]="'Education'"></app-gradient-title>
             
             <!-- Experience Section -->
-            <div class="py-16 space-y-8 px-4 sm:px-[20%]">
+            <section class="py-16 space-y-8 px-4 sm:px-[20%]">
                 <div *ngFor="let expGroup of experiencesEducation" class="grid grid-cols-[auto,auto,1fr] gap-8">
                     <!-- Year Column -->
                     <div class="text-right text-lg font-semibold w-24">
@@ -105,6 +106,6 @@
                         </div>
                     </div>
                 </div>
-            </div>       
+            </section>       
     </section>
 </div>

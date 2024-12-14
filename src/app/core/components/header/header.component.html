@@ -2,12 +2,15 @@
 flex flex-row items-center">
     <!-- Brand Name -->
     <div class="flex-1">
-        <a href="/" class="text-lg font-bold font-red-hat-display">Tiago Barracha</a>
+        <!-- <a href="/" class="text-lg font-bold font-red-hat-display">Tiago Barracha</a> -->
     </div>
 
     <!-- Navigation Links -->
     <div class="flex-1">
         <nav class="flex justify-center space-x-4">
+            <a [routerLink]="['/']" routerLinkActive="underline" class="hover:underline">
+                Home
+            </a>
             <a (click)="navigateToProjects()" class="hover:underline cursor-pointer">
                 Projects
             </a>
