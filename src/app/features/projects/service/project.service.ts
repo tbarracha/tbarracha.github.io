@@ -33,7 +33,7 @@ export class ProjectService {
     this.onProjectTypeSelected.emit(projectType);
   }
 
-  private updateSelectedProjects() {
+  updateSelectedProjects() {
     if (this.selectedProjectType === ProjectType.All) {
       // Include all projects
       this.selectedProjectList = [...this.projectList];

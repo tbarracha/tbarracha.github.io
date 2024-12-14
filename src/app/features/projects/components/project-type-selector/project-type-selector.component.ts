@@ -25,11 +25,21 @@ export class ProjectTypeSelectorComponent {
     ProjectType.Other,
   ];
 
+  constructor() {
+    this.projectService.onProjectTypeSelected.subscribe((projectType: string) => {
+      this.onClick(projectType);
+    });
+  }
+
   ngAfterViewInit() {
     console.log('Project types:', this.projectTypes);
   }
 
   onClick(projectType: string) {
+    if (projectType === this.selectedProjectType) {
+      return;
+    }
+
     this.selectedProjectType = projectType;
     this.projectService.selectProjectType(projectType);
   }

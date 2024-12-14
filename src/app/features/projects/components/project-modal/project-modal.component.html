@@ -59,7 +59,7 @@
                 </div>
 
                 <!-- Image Selection Section -->
-                <div class="min-h-28 overflow-x-auto overflow-y-hidden flex items-center gap-4 p-4">
+                <div class="min-h-24 overflow-x-auto overflow-y-hidden flex items-center gap-2 p-2">
                     <div
                         *ngFor="let image of project?.images; let i = index"
                         class="relative w-24 h-20 flex-shrink-0 cursor-pointer overflow-hidden rounded-lg"
@@ -78,19 +78,19 @@
             <!-- Project Details Section -->
             <div class="relative flex-grow flex flex-col overflow-y-auto">
                 <!-- Project Title -->
-                <div class="px-6 pt-6">
+                <div class="px-4 pt-4">
                     <h3 class="text-2xl font-semibold text-primary mb-4">{{ project.name }}</h3>
                     <p class="text-sm hidden md:flex">{{ project.date }} | {{ project.employer }}</p>
                 </div>
 
                 <!-- Project Details & Navigation -->
                 <div class="flex-grow flex flex-col overflow-y-auto">
-                    <div class="px-6 pb-6 flex-grow overflow-y-scroll" #detailsContainer>
+                    <div class="px-4 pb-4 flex-grow overflow-y-scroll" #detailsContainer>
 
                         <p class="text-sm flex md:hidden">{{ project.date }} | {{ project.employer }}</p>
 
                         <!-- Project Details Section -->
-                        <div class="space-y-6">
+                        <div class="space-y-4">
                             <div *ngFor="let section of project.sections">
                                 <h4 class="text-lg font-semibold mb-2">{{ section.title }}</h4>
                                 <p class="whitespace-pre-line" [innerHTML]="section.content"></p>
