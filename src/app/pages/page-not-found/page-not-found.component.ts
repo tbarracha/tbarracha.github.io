@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from "../../core/components/header/header.component";
-import { GradientButtonComponent } from "../../core/components/gradient-button/gradient-button.component";
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-page-not-found',
-  imports: [HeaderComponent, GradientButtonComponent],
+  imports: [HeaderComponent],
   templateUrl: './page-not-found.component.html',
   styleUrl: './page-not-found.component.scss'
 })

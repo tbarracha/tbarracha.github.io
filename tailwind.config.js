@@ -9,12 +9,10 @@ module.exports = {
       },
       colors: {
         // Theme START
-        'header': 'var(--header)',
-        'header-contrast': 'var(--header-contrast)',
+        'main-dark': 'var(--main-dark)',
+        'main-light': 'var(--main-light)',
         'background': 'var(--background)',
         'background-contrast': 'var(--background-contrast)',
-        'footer': 'var(--footer)',
-        'footer-contrast': 'var(--footer-contrast)',
         'primary': 'var(--primary)',
         'primary-contrast': 'var(--primary-contrast)',
         'secondary': 'var(--secondary)',
@@ -34,10 +32,15 @@ module.exports = {
         'warning-secondary': 'var(--warning-secondary)',
         'danger': 'var(--danger)',
         'danger-secondary': 'var(--danger-secondary)',
+        'header': 'var(--header)',
+        'header-contrast': 'var(--header-contrast)',
+        'footer': 'var(--footer)',
+        'footer-contrast': 'var(--footer-contrast)',
         // Theme END
       },
       spacing: {
         'main-padding': '10%', // px-[10%]
+        'header-height': '4rem', // 4rem
       },
       boxShadow: {
         'main-shadow': '0 4px 6px -1px rgba(15, 23, 42, 0.2), 0 2px 4px -1px rgba(15, 23, 42, 0.1)', // Slate shadow

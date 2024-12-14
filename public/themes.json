@@ -21,7 +21,9 @@
     "warning": "#fbbf24",
     "warningSecondary": "#fde68a",
     "danger": "#ef4444",
-    "dangerSecondary": "#fecaca"
+    "dangerSecondary": "#fecaca",
+    "mainDark": "#161722",
+    "mainLight": "#EDF2F4"
   },
   {
     "name": "dark",
@@ -45,6 +47,8 @@
     "warning": "#fbbf24",
     "warningSecondary": "#fde68a",
     "danger": "#ef4444",
-    "dangerSecondary": "#fecaca"
+    "dangerSecondary": "#fecaca",
+    "mainDark": "#161722",
+    "mainLight": "#EDF2F4"
   }
 ]

@@ -8,7 +8,7 @@ export class Projects extends StaticListModel<Project> {
     public static readonly DashyHeroes: Project = {
         name: 'Dashy Heroes',
         date: "2020",
-        employer: 'Personal',
+        employer: 'Stardrop Dev',
         sections: [
             {
                 title: "Premise",
@@ -369,5 +369,5 @@ export class Projects extends StaticListModel<Project> {
 export const FeaturedProjects: Project[] = [
     Projects.DashyHeroes,
     Projects.Pokedex,
-    Projects.Portfolio
+    Projects.FifaFootblocks
 ] as const;
