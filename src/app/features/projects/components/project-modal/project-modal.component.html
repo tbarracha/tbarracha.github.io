@@ -19,127 +19,85 @@
         <div class="w-full h-full flex flex-col md:flex-row">
 
             <!-- Image Viewer Section -->
-            <div class="relative flex-none h-3/5 md:h-full md:w-3/5 flex flex-col">
+            <div class="relative flex-none h-3/5 md:h-full md:w-3/5 flex flex-col bg-black">
                 <!-- Image Preview Section -->
-                <div class="flex-grow relative">
-                    
-                    <div class="relative w-full h-full flex flex-col">
-                        <!-- Image Display -->
-                        <img
+                <div class="flex flex-col flex-grow relative overflow-hidden">
+                    <img
+                        class="flex-grow object-contain max-h-[90%] max-w-full"
                         [src]="project.images?.[currentImageIndex]"
                         [alt]="project.name"
-                        class="w-full h-full object-cover"
                         *ngIf="project?.images?.length; else noImage"
-                        >
-            
-                        <!-- Image Selection Section -->
-                        <div class="h-24 overflow-x-auto overflow-y-hidden flex items-center gap-4 px-4">
-                            <div
-                                *ngFor="let image of project?.images; let i = index"
-                                class="relative w-24 h-20 flex-shrink-0 cursor-pointer rounded-xl overflow-hidden"
-                                (click)="selectImage(i)"
-                            >
-                                <img
-                                    [src]="image"
-                                    [alt]="'Image ' + i"
-                                    class="w-full h-full object-cover rounded-lg transition-opacity duration-300"
-                                    [class.opacity-40]="i !== currentImageIndex"
-                                >
-                            </div>
-                        </div>
+                    >
+                    
+                    <!-- Previous Image Button -->
+                    <button
+                        class="absolute top-0 left-0 h-full w-12 flex items-center justify-center
+                        text-transparent hover:text-highlight
+                        hover:bg-gradient-to-r hover:from-black/30 hover:to-transparent
+                        transition-all duration-300"
+                        (click)="previousImage()"
+                        *ngIf="project?.images?.length ?? 0 > 1"
+                        [innerHTML]="iconService.getSanitizedIcon(iconService.icons.ArrowLeft)"
+                    ></button>
 
-                    
-                        <ng-template #noImage>
-                            <div class="w-full h-full flex items-center justify-center bg-gray-300 text-primary">
-                                No Image Available
-                            </div>
-                        </ng-template>
-                        
-                        <!-- Previous Image Button -->
-                        <button
-                            class="absolute top-0 left-0 h-full w-12 flex items-center justify-center
-                            text-transparent hover:text-highlight
-                            hover:bg-gradient-to-r hover:from-black/30 hover:to-transparent
-                            transition-all duration-300"
-                            (click)="previousImage()"
-                            *ngIf="project?.images?.length ?? 0 > 1"
-                            [innerHTML]="iconService.getSanitizedIcon(iconService.icons.ArrowLeft)"
-                        ></button>
-                    
-                        <!-- Next Image Button -->
-                        <button
-                            class="absolute top-0 right-0 h-full w-12 flex items-center justify-center
-                            text-transparent hover:text-highlight
-                            hover:bg-gradient-to-l hover:from-black/30 hover:to-transparent
-                            transition-all duration-300"
-                            (click)="nextImage()"
-                            *ngIf="project?.images?.length ?? 0 > 1"
-                            [innerHTML]="iconService.getSanitizedIcon(iconService.icons.ArrowRight)"
-                        ></button>
+                    <!-- Next Image Button -->
+                    <button
+                        class="absolute top-0 right-0 h-full w-12 flex items-center justify-center
+                        text-transparent hover:text-highlight
+                        hover:bg-gradient-to-l hover:from-black/30 hover:to-transparent
+                        transition-all duration-300"
+                        (click)="nextImage()"
+                        *ngIf="project?.images?.length ?? 0 > 1"
+                        [innerHTML]="iconService.getSanitizedIcon(iconService.icons.ArrowRight)"
+                    ></button>
+
+                    <ng-template #noImage>
+                        <div class="w-full h-full flex items-center justify-center bg-gray-300 text-primary">
+                            No Image Available
+                        </div>
+                    </ng-template>
+                </div>
+
+                <!-- Image Selection Section -->
+                <div class="min-h-28 overflow-x-auto overflow-y-hidden flex items-center gap-4 p-4">
+                    <div
+                        *ngFor="let image of project?.images; let i = index"
+                        class="relative w-24 h-20 flex-shrink-0 cursor-pointer overflow-hidden rounded-lg"
+                        (click)="selectImage(i)"
+                    >
+                        <img
+                            [src]="image"
+                            [alt]="'Thumbnail ' + i"
+                            class="w-full h-full object-cover transition-opacity duration-300"
+                            [class.opacity-40]="i !== currentImageIndex"
+                        >
                     </div>
                 </div>
             </div>
 
-    
             <!-- Project Details Section -->
             <div class="relative flex-grow flex flex-col overflow-y-auto">
                 <!-- Project Title -->
                 <div class="px-6 pt-6">
                     <h3 class="text-2xl font-semibold text-primary mb-4">{{ project.name }}</h3>
-                    <p class="text-sm">{{ project.date }} | {{ project.employer }}</p>
+                    <p class="text-sm hidden md:flex">{{ project.date }} | {{ project.employer }}</p>
                 </div>
-    
+
                 <!-- Project Details & Navigation -->
                 <div class="flex-grow flex flex-col overflow-y-auto">
+                    <div class="px-6 pb-6 flex-grow overflow-y-scroll" #detailsContainer>
 
-                    <!-- Project Details Section -->
-                    <div class="p-6 flex-grow overflow-y-scroll"
-                    #detailsContainer>
-        
-                        <!-- Technologies -->
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span
-                                *ngFor="let tech of project.technologies"
-                                class="inline-flex items-center text-highlight-contrast text-sm px-2 py-1 rounded-lg border border-highlight"
-                            >
-                                <span 
-                                    class="inline-block w-4 h-4 mr-1"
-                                    [innerHTML]="iconService.getSanitizedIcon(tech.icon)"
-                                    *ngIf="tech.icon"
-                                ></span>
-                                {{ tech.name }}
-                            </span>
-                        </div>
-            
-                        <!-- Project Sections -->
-                        <div class="space-y-6 mb-6">
+                        <p class="text-sm flex md:hidden">{{ project.date }} | {{ project.employer }}</p>
+
+                        <!-- Project Details Section -->
+                        <div class="space-y-6">
                             <div *ngFor="let section of project.sections">
                                 <h4 class="text-lg font-semibold mb-2">{{ section.title }}</h4>
                                 <p class="whitespace-pre-line" [innerHTML]="section.content"></p>
                             </div>
                         </div>
-        
-                        <!-- Project Links -->
-                        <div *ngIf="project.links?.length" class="mb-6">
-                            <div class="flex flex-wrap gap-2">
-                                <a
-                                    *ngFor="let link of project.links"
-                                    [href]="link.url"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="px-2 py-1 text-highlight-contrast hover:underline transition-all duration-300 rounded-lg flex items-center gap-2"
-                                >
-                                    <span 
-                                        *ngIf="link.icon"
-                                        class="w-5 h-5"
-                                        [innerHTML]="iconService.getSanitizedIcon(link.icon)"
-                                    ></span>
-                                    {{ link.name }}
-                                </a>
-                            </div>
-                        </div>
                     </div>
-    
+
                     <!-- Navigation Buttons -->
                     <div class="w-full flex justify-between text-highlight">
                         <button 
