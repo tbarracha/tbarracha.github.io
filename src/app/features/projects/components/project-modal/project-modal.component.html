@@ -16,48 +16,70 @@
         ></button>
 
         <!-- Content -->
-        <div class="relative w-full h-full flex flex-col md:flex-row">
+        <div class="w-full h-full flex flex-col md:flex-row">
 
             <!-- Image Viewer Section -->
-            <div class="relative flex-none h-3/5 md:h-full md:w-3/5">
+            <div class="relative flex-none h-3/5 md:h-full md:w-3/5 flex flex-col">
+                <!-- Image Preview Section -->
+                <div class="flex-grow relative">
+                    
+                    <div class="relative w-full h-full flex flex-col">
+                        <!-- Image Display -->
+                        <img
+                        [src]="project.images?.[currentImageIndex]"
+                        [alt]="project.name"
+                        class="w-full h-full object-cover"
+                        *ngIf="project?.images?.length; else noImage"
+                        >
+            
+                        <!-- Image Selection Section -->
+                        <div class="h-24 overflow-x-auto overflow-y-hidden flex items-center gap-4 px-4">
+                            <div
+                                *ngFor="let image of project?.images; let i = index"
+                                class="relative w-24 h-20 flex-shrink-0 cursor-pointer rounded-xl overflow-hidden"
+                                (click)="selectImage(i)"
+                            >
+                                <img
+                                    [src]="image"
+                                    [alt]="'Image ' + i"
+                                    class="w-full h-full object-cover rounded-lg transition-opacity duration-300"
+                                    [class.opacity-40]="i !== currentImageIndex"
+                                >
+                            </div>
+                        </div>
 
-                <!-- Previous Image Button -->
-                <button
-                    class="absolute top-0 left-0 h-full w-12 flex items-center justify-center
-                    text-transparent hover:text-highlight
-                    hover:bg-gradient-to-r hover:from-black/30 hover:to-transparent
-                    transition-all duration-300"
-                    (click)="previousImage()"
-                    *ngIf="project.images && project.images.length > 1"
-                    [innerHTML]="iconService.getSanitizedIcon(iconService.icons.ArrowLeft)"
-                ></button>
-
-                <!-- Next Image Button -->
-                <button
-                    class="absolute top-0 right-0 h-full w-12 flex items-center justify-center
-                    text-transparent hover:text-highlight
-                    hover:bg-gradient-to-l hover:from-black/30 hover:to-transparent
-                    transition-all duration-300"
-                    (click)="nextImage()"
-                    *ngIf="project.images && project.images.length > 1"
-                    [innerHTML]="iconService.getSanitizedIcon(iconService.icons.ArrowRight)"
-                ></button>
-    
-                <!-- Image Display -->
-                <img
-                    [src]="project.images?.[currentImageIndex]"
-                    [alt]="project.name"
-                    class="w-full h-full object-cover"
-                    *ngIf="project.images?.length; else noImage"
-                >
-    
-    
-                <ng-template #noImage>
-                    <div class="w-full h-full flex items-center justify-center bg-gray-300 text-primary">
-                        No Image Available
+                    
+                        <ng-template #noImage>
+                            <div class="w-full h-full flex items-center justify-center bg-gray-300 text-primary">
+                                No Image Available
+                            </div>
+                        </ng-template>
+                        
+                        <!-- Previous Image Button -->
+                        <button
+                            class="absolute top-0 left-0 h-full w-12 flex items-center justify-center
+                            text-transparent hover:text-highlight
+                            hover:bg-gradient-to-r hover:from-black/30 hover:to-transparent
+                            transition-all duration-300"
+                            (click)="previousImage()"
+                            *ngIf="project?.images?.length ?? 0 > 1"
+                            [innerHTML]="iconService.getSanitizedIcon(iconService.icons.ArrowLeft)"
+                        ></button>
+                    
+                        <!-- Next Image Button -->
+                        <button
+                            class="absolute top-0 right-0 h-full w-12 flex items-center justify-center
+                            text-transparent hover:text-highlight
+                            hover:bg-gradient-to-l hover:from-black/30 hover:to-transparent
+                            transition-all duration-300"
+                            (click)="nextImage()"
+                            *ngIf="project?.images?.length ?? 0 > 1"
+                            [innerHTML]="iconService.getSanitizedIcon(iconService.icons.ArrowRight)"
+                        ></button>
                     </div>
-                </ng-template>
+                </div>
             </div>
+
     
             <!-- Project Details Section -->
             <div class="relative flex-grow flex flex-col overflow-y-auto">

@@ -85,4 +85,10 @@ export class ProjectModalComponent {
       this.detailsContainer.nativeElement.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }
+
+  selectImage(index: number): void {
+    if (this.project?.images?.length && index >= 0 && index < this.project.images.length) {
+      this.currentImageIndex = index;
+    }
+  }
 }
