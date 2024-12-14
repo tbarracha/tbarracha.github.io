@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef } from '@angular/core';
 import { Project } from '../../../../core/models/project';
 import { IconService } from '../../../../core/services/icon.service';
 import { CommonModule } from '@angular/common';
@@ -13,6 +13,8 @@ import { ProjectService } from '../../service/project.service';
 export class ProjectModalComponent {
   @Input() project?: Project;
   currentImageIndex = 0;
+
+  @ViewChild('detailsContainer') detailsContainer!: ElementRef<HTMLDivElement>;
 
   constructor(
     public iconService: IconService,
@@ -43,6 +45,7 @@ export class ProjectModalComponent {
   openProject(project: Project): void {
     this.project = project;
     this.currentImageIndex = 0; // Reset the image index for the new project
+    this.resetScrollPosition(); // Reset scroll position
   }
 
   closeModal(): void {
@@ -76,5 +79,10 @@ export class ProjectModalComponent {
       console.warn("Next project not found.");
     }
   }
-  
+
+  private resetScrollPosition(): void {
+    if (this.detailsContainer) {
+      this.detailsContainer.nativeElement.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
 }
