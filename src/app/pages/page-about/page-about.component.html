@@ -14,16 +14,16 @@
                 <app-gradient-title [title]="'Tech Stack'"></app-gradient-title>
             
                 <!-- Tech Stack Section -->
-                <section class="w-full py-16 px-4 md:px-[20%] text-primary">
-                    <div class="flex flex-col space-y-8">
+                <section class="w-full py-16 px-16 md:px-[20%] text-primary">
+                    <div class="hidden md:flex flex-col space-y-8">
                         <!-- Frontend -->
-                        <div class="flex flex-col md:grid md:grid-cols-4 gap-4">
+                        <div class="flex flex-col lg:grid lg:grid-cols-4 gap-4">
                             <!-- Title -->
-                            <h3 class="text-xl font-semibold col-span-4 md:col-span-1 md:self-center md:justify-self-start">
+                            <h3 class="text-xl font-semibold col-span-4 lg:col-span-1 lg:self-center lg:justify-self-start">
                                 Frontend
                             </h3>
                             <!-- Technologies -->
-                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 col-span-4 md:col-span-3">
+                            <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 col-span-4 lg:col-span-3">
                                 <app-tech-display
                                     *ngFor="let technology of techFront"
                                     class="w-full h-16 border border-primary rounded-lg p-4"
@@ -34,13 +34,13 @@
                         </div>
                     
                         <!-- Backend -->
-                        <div class="flex flex-col md:grid md:grid-cols-4 gap-4">
+                        <div class="flex flex-col lg:grid lg:grid-cols-4 gap-4">
                             <!-- Title -->
-                            <h3 class="text-xl font-semibold col-span-4 md:col-span-1 md:self-center md:justify-self-start">
+                            <h3 class="text-xl font-semibold col-span-4 lg:col-span-1 lg:self-center lg:justify-self-start">
                                 Backend
                             </h3>
                             <!-- Technologies -->
-                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 col-span-4 md:col-span-3">
+                            <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 col-span-4 lg:col-span-3">
                                 <app-tech-display
                                     *ngFor="let technology of techBack"
                                     class="w-full h-16 border border-primary rounded-lg p-4"
@@ -51,13 +51,66 @@
                         </div>
                     
                         <!-- Miscellaneous -->
-                        <div class="flex flex-col md:grid md:grid-cols-4 gap-4">
+                        <div class="flex flex-col lg:grid lg:grid-cols-4 gap-4">
                             <!-- Title -->
-                            <h3 class="text-xl font-semibold col-span-4 md:col-span-1 md:self-center md:justify-self-start">
+                            <h3 class="text-xl font-semibold col-span-4 lg:col-span-1 lg:self-center lg:justify-self-start">
                                 Misc
                             </h3>
                             <!-- Technologies -->
-                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 col-span-4 md:col-span-3">
+                            <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 col-span-4 lg:col-span-3">
+                                <app-tech-display
+                                    *ngFor="let technology of techMisc"
+                                    class="w-full h-16 border border-primary rounded-lg p-4"
+                                    [technology]="technology"
+                                    [size]="'small'">
+                                </app-tech-display>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex md:hidden flex-col space-y-8">
+                        <!-- Frontend -->
+                        <div class="grid grid-cols-[auto,1fr] gap-8">
+                            <!-- Title -->
+                            <h3 class="text-xl font-semibold w-24">
+                                Frontend
+                            </h3>
+                            <!-- Technologies -->
+                            <div class="flex flex-col gap-4">
+                                <app-tech-display
+                                    *ngFor="let technology of techFront"
+                                    class="w-full h-16 border border-primary rounded-lg p-4"
+                                    [technology]="technology"
+                                    [size]="'small'">
+                                </app-tech-display>
+                            </div>
+                        </div>
+                    
+                        <!-- Backend -->
+                        <div class="grid grid-cols-[auto,1fr] gap-8">
+                            <!-- Title -->
+                            <h3 class="text-xl font-semibold w-24">
+                                Backend
+                            </h3>
+                            <!-- Technologies -->
+                            <div class="flex flex-col gap-4">
+                                <app-tech-display
+                                    *ngFor="let technology of techBack"
+                                    class="w-full h-16 border border-primary rounded-lg p-4"
+                                    [technology]="technology"
+                                    [size]="'small'">
+                                </app-tech-display>
+                            </div>
+                        </div>
+                    
+                        <!-- Miscellaneous -->
+                        <div class="grid grid-cols-[auto,1fr] gap-8">
+                            <!-- Title -->
+                            <h3 class="text-xl font-semibold w-24">
+                                Misc
+                            </h3>
+                            <!-- Technologies -->
+                            <div class="flex flex-col gap-4">
                                 <app-tech-display
                                     *ngFor="let technology of techMisc"
                                     class="w-full h-16 border border-primary rounded-lg p-4"
