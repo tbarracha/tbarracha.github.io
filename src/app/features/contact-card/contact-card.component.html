@@ -4,12 +4,8 @@
       (click)="closeCard()"
     >
       <div 
-        class="relative bg-background bg-opacity-50 text-background-contrast backdrop-blur-sm rounded-xl overflow-hidden shadow-xl w-[90%] max-w-lg h-[80%] transform-gpu transition-transform duration-300"
-        (mousemove)="onMouseMove($event)"
+        class="relative bg-background bg-opacity-50 text-background-contrast backdrop-blur-sm rounded-xl overflow-hidden shadow-2xl w-[90%] max-w-lg h-[80%] transition-transform duration-300"
         (click)="$event.stopPropagation()"
-        [ngStyle]="{
-          transform: 'rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateZ(0)'
-        }"
       >
         <!-- Close Button -->
         <button 
@@ -47,21 +43,25 @@
                 </div>
                 
                 <!-- Socials -->
-                <div class="flex flex-row items-center justify-center gap-4 text-primary">
-                    <a href="https://drive.google.com/file/d/1M_Xy8tNV5kpJZ95S5LDqN20h6jWE7oZI/view" target="_blank" class="w-8"
-                    [innerHTML]="iconService.getSanitizedIcon(iconService.icons.CV)">
+                <div class="flex flex-row items-center justify-center gap-4">
+                    <a href="https://drive.google.com/file/d/1M_Xy8tNV5kpJZ95S5LDqN20h6jWE7oZI/view" target="_blank" class="w-8">
+                        <div [innerHTML]="iconService.getSanitizedIcon(iconService.icons.CV)">
+                        </div>
                     </a>
 
-                    <a href="https://www.linkedin.com/in/tiago-barracha/" target="_blank" class="w-8"
-                    [innerHTML]="iconService.getSanitizedIcon(iconService.icons.LinkedIn)">
+                    <a href="https://www.linkedin.com/in/tiago-barracha/" target="_blank"  class="w-8">
+                        <div [innerHTML]="iconService.getSanitizedIcon(iconService.icons.LinkedIn)">
+                        </div>
                     </a>
 
-                    <a href="https://github.com/tbarracha" target="_blank" class="w-8"
-                    [innerHTML]="iconService.getSanitizedIcon(iconService.icons.GitHub)">
+                    <a href="https://github.com/tbarracha" target="_blank" class="w-8">
+                        <div [innerHTML]="iconService.getSanitizedIcon(iconService.icons.GitHub)">
+                        </div>
                     </a>
 
-                    <a href="https://www.youtube.com/@tiagobarracha" target="_blank" class="w-8"
-                    [innerHTML]="iconService.getSanitizedIcon(iconService.icons.Youtube)">
+                    <a href="https://www.youtube.com/@tiagobarracha" target="_blank" class="w-8">
+                        <div [innerHTML]="iconService.getSanitizedIcon(iconService.icons.Youtube)">
+                        </div>
                     </a>
                 </div>
             </div>
