@@ -6,7 +6,7 @@
     <section class="w-full h-auto overflow-y-auto">
 
         <!-- Hero Section -->
-        <section class="h-[calc(100vh-theme(spacing.header-height))] w-full px-[20%] flex flex-col space-y-16 items-center justify-center
+        <section class="h-screen w-full px-[20%] flex flex-col space-y-16 items-center justify-center
         font-red-hat-display bg-background text-background-contrast">
             
             <!-- Hello Section -->
@@ -71,14 +71,19 @@
         <section>
 
             <!-- Project Type Selector (sticky) -->
-            <section class="sticky top-0 z-10 h-10 w-full overflow-hidden">
-                <div class="z-0 absolute -top-2 w-full h-1/2 bg-background">
+            <section class="sticky top-0 z-10 h-16 w-full overflow-hidden">
+                
+                <!-- Background Gradient -->
+                <div class="absolute inset-0 top-0 w-full h-full bg-gradient-to-b from-slate-600/50 to-transparent">
                 </div>
-                <div class="z-0 absolute top-0 w-full h-1/2 bg-background shadow-lg shadow-slate-600/20">
+                
+                <!-- Half Background -->
+                <div class="absolute inset-0 top-0 w-full h-1/2 bg-background">
                 </div>
+
                 <!-- bg-gradient-to-b from-background via-background to-transparent -->
                  <div class="relative w-full h-full overflow-visible">
-                     <app-project-type-selector></app-project-type-selector>
+                     <app-project-type-selector class="overflow-visible"></app-project-type-selector>
                  </div>
             </section>
     

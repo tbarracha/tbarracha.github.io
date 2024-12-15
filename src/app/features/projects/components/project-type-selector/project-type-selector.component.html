@@ -1,7 +1,7 @@
 <div class="h-full w-full flex items-center px-4 sm:px-0 sm:justify-center gap-4 overflow-visible overflow-x-auto no-scrollbar">
   @for (projectType of projectTypes; track projectType) {
     <app-gradient-button
-    class="z-10"
+    class="z-10 overflow-visible"
       [text]="projectType"
       [isSelected]="projectType === selectedProjectType"
       (click)="onClick(projectType)">
