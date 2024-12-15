@@ -4,14 +4,13 @@ import { Technologies, Technology } from '../../core/models/technologies';
 import { TechDisplayComponent } from "../../features/technologies/tech-display/tech-display.component";
 import { CommonModule } from '@angular/common';
 import { ProjectTypeSelectorComponent } from "../../features/projects/components/project-type-selector/project-type-selector.component";
-import { Project } from '../../core/models/project';
-import { Projects } from '../../core/models/projects';
 import { ProjectListComponent } from "../../features/projects/components/project-list/project-list.component";
 import { IconService } from '../../core/services/icon.service';
+import { ColoredBlobsComponent } from "../../core/components/colored-blobs/colored-blobs.component";
 
 @Component({
   selector: 'app-page-home',
-  imports: [CommonModule, HeaderComponent, TechDisplayComponent, ProjectTypeSelectorComponent, ProjectListComponent],
+  imports: [CommonModule, HeaderComponent, TechDisplayComponent, ProjectTypeSelectorComponent, ProjectListComponent, ColoredBlobsComponent],
   templateUrl: './page-home.component.html',
   styleUrl: './page-home.component.scss'
 })

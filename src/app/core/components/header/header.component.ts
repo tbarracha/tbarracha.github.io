@@ -3,12 +3,12 @@ import { ThemeToggleComponent } from "../theme-toggle/theme-toggle.component";
 import { Router } from '@angular/router';
 import { ProjectService } from '../../../features/projects/service/project.service';
 import { ProjectType } from '../../models/project';
-import { ContactCardComponent } from "../../../features/contact-card/contact-card.component";
 import { EventService } from '../../services/event.service';
+import { ContactCardComponent } from "../../../features/contact-card/contact-card.component";
 
 @Component({
   selector: 'app-header',
-  imports: [ ThemeToggleComponent, ContactCardComponent],
+  imports: [ThemeToggleComponent, ContactCardComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

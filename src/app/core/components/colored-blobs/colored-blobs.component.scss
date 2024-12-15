@@ -1,0 +1,51 @@
+/* Blob Animations */
+@keyframes blob-move {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    25% {
+      transform: translate(20px, -30px) scale(1.2);
+    }
+    50% {
+      transform: translate(-30px, 20px) scale(0.8);
+    }
+    75% {
+      transform: translate(30px, 30px) scale(1.1);
+    }
+  }
+  
+  /* Blob Styling */
+  .blob-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none; /* Make the blobs non-interactive */
+  }
+  
+  .blob {
+    position: absolute;
+    width: 50%; /* Reduced size */
+    height: 50%; /* Reduced size */
+    border-radius: 50%;
+    filter: blur(50px); /* Adjusted to match size */
+    animation: blob-move 10s infinite ease-in-out;
+  }
+  
+  .blob:nth-child(1) {
+    top: -25px; /* Adjusted for smaller size */
+    left: -25px; /* Adjusted for smaller size */
+    animation-delay: 0s;
+  }
+  
+  .blob:nth-child(2) {
+    bottom: -25px; /* Adjusted for smaller size */
+    right: -25px; /* Adjusted for smaller size */
+    animation-delay: 3s;
+  }
+  
+  .blob:nth-child(3) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: 6s;
+  }
+  
