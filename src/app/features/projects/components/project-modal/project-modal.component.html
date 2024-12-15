@@ -59,10 +59,10 @@
                 </div>
 
                 <!-- Image Selection Section -->
-                <div class="min-h-24 overflow-x-auto overflow-y-hidden flex items-center gap-2 p-2">
+                <div class="min-h-20 overflow-x-auto overflow-y-hidden flex items-center justify-center gap-2 p-2">
                     <div
                         *ngFor="let image of project?.images; let i = index"
-                        class="relative w-24 h-20 flex-shrink-0 cursor-pointer overflow-hidden rounded-lg"
+                        class="relative w-20 h-16 flex-shrink-0 cursor-pointer overflow-hidden rounded-lg"
                         (click)="selectImage(i)"
                     >
                         <img
@@ -101,16 +101,18 @@
                     <!-- Navigation Buttons -->
                     <div class="w-full flex justify-between text-highlight">
                         <button 
-                            class="px-4 py-2 bg-main-dark hover:bg-main-gradient rounded-tr-lg"
+                            class="w-12 px-2 py-2 bg-main-dark hover:bg-main-gradient rounded-tr-lg
+                            flex justify-center items-center"
                             (click)="fetchPreviousProject()"
+                            [innerHTML]="iconService.getSanitizedIcon(iconService.icons.ArrowLeft)"
                         >
-                            Prev
                         </button>
                         <button 
-                            class="px-4 py-2 bg-main-dark hover:bg-main-gradient rounded-tl-lg"
+                            class="w-12 px-2 py-2 bg-main-dark hover:bg-main-gradient rounded-tl-lg
+                            flex justify-center items-center"
                             (click)="fetchNextProject()"
+                            [innerHTML]="iconService.getSanitizedIcon(iconService.icons.ArrowRight)"
                         >
-                            Next
                         </button>
                     </div>
                 </div>
