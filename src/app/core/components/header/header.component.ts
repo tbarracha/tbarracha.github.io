@@ -5,11 +5,10 @@ import { ProjectService } from '../../../features/projects/service/project.servi
 import { ProjectType } from '../../models/project';
 import { ContactCardComponent } from "../../../features/contact-card/contact-card.component";
 import { EventService } from '../../services/event.service';
-import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [NgClass, ThemeToggleComponent, ContactCardComponent],
+  imports: [ ThemeToggleComponent, ContactCardComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
