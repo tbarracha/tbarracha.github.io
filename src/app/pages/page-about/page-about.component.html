@@ -14,12 +14,16 @@
                 <app-gradient-title [title]="'Tech Stack'"></app-gradient-title>
             
                 <!-- Tech Stack Section -->
-                <section class="w-full py-16 px-[20%] text-primary">
-                    <div class="flex flex-col space-y-4">
+                <section class="w-full py-16 px-4 md:px-[20%] text-primary">
+                    <div class="flex flex-col space-y-8">
                         <!-- Frontend -->
-                        <div class="space-y-4">
-                            <div class="grid grid-cols-4 gap-4">
-                                <h3 class="text-xl font-semibold">Frontend</h3>
+                        <div class="flex flex-col md:grid md:grid-cols-4 gap-4">
+                            <!-- Title -->
+                            <h3 class="text-xl font-semibold col-span-4 md:col-span-1 md:self-center md:justify-self-start">
+                                Frontend
+                            </h3>
+                            <!-- Technologies -->
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 col-span-4 md:col-span-3">
                                 <app-tech-display
                                     *ngFor="let technology of techFront"
                                     class="w-full h-16 border border-primary rounded-lg p-4"
@@ -28,11 +32,15 @@
                                 </app-tech-display>
                             </div>
                         </div>
-        
+                    
                         <!-- Backend -->
-                        <div class="space-y-4">
-                            <div class="grid grid-cols-4 gap-4">
-                                <h3 class="text-xl font-semibold">Backend</h3>
+                        <div class="flex flex-col md:grid md:grid-cols-4 gap-4">
+                            <!-- Title -->
+                            <h3 class="text-xl font-semibold col-span-4 md:col-span-1 md:self-center md:justify-self-start">
+                                Backend
+                            </h3>
+                            <!-- Technologies -->
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 col-span-4 md:col-span-3">
                                 <app-tech-display
                                     *ngFor="let technology of techBack"
                                     class="w-full h-16 border border-primary rounded-lg p-4"
@@ -41,11 +49,15 @@
                                 </app-tech-display>
                             </div>
                         </div>
-        
+                    
                         <!-- Miscellaneous -->
-                        <div class="space-y-4">
-                            <div class="grid grid-cols-4 gap-4">
-                                <h3 class="text-xl font-semibold">Misc</h3>
+                        <div class="flex flex-col md:grid md:grid-cols-4 gap-4">
+                            <!-- Title -->
+                            <h3 class="text-xl font-semibold col-span-4 md:col-span-1 md:self-center md:justify-self-start">
+                                Misc
+                            </h3>
+                            <!-- Technologies -->
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 col-span-4 md:col-span-3">
                                 <app-tech-display
                                     *ngFor="let technology of techMisc"
                                     class="w-full h-16 border border-primary rounded-lg p-4"
@@ -65,12 +77,12 @@
             <section class=" py-16 space-y-8 px-4 sm:px-[20%]">
                 <div *ngFor="let expGroup of experiencesWork" class="grid grid-cols-[auto,auto,1fr] gap-8">
                     <!-- Year Column -->
-                    <div class="text-right text-lg font-semibold w-24">
+                    <div class="text-right text-lg font-semibold w-12 md:w-24">
                         {{ expGroup.year }}
                     </div>
                     
                     <!-- Line -->
-                    <div class="h-full w-[1px] bg-highlight">
+                    <div class="h-full w-[1px] bg-scrollbar-bg">
                     </div>
         
                     <!-- Experiences Column -->
@@ -90,12 +102,12 @@
             <section class="py-16 space-y-8 px-4 sm:px-[20%]">
                 <div *ngFor="let expGroup of experiencesEducation" class="grid grid-cols-[auto,auto,1fr] gap-8">
                     <!-- Year Column -->
-                    <div class="text-right text-lg font-semibold w-24">
+                    <div class="text-right text-lg font-semibold w-12 md:w-24">
                         {{ expGroup.year }}
                     </div>
                     
                     <!-- Line -->
-                    <div class="h-full w-[1px] bg-highlight">
+                    <div class="h-full w-[1px] bg-scrollbar-bg">
                     </div>
         
                     <!-- Experiences Column -->

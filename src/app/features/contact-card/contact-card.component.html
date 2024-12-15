@@ -9,7 +9,7 @@
       >
         <!-- Close Button -->
         <button 
-          class="w-8 absolute top-4 right-4 text-white drop-shadow-lg rounded-full bg-black/5 hover:bg-black/20 transition-all duration-300"
+          class="w-8 absolute top-4 right-4 text-white drop-shadow-lg rounded-full bg-black/5 hover:bg-main-gradient transition-all duration-300"
           (click)="closeCard()"
           [innerHTML]="iconService.getSanitizedIcon(iconService.icons.Close)"
         >
@@ -24,13 +24,7 @@
                 <!-- Contacts -->
                 <div class="flex flex-col space-y-2">
                     <!-- Email -->
-                    <div class="flex items-center justify-center space-x-2">
-                        <span 
-                        class="inline-block w-4 h-4 mr-1"
-                        [innerHTML]="iconService.getSanitizedIcon(iconService.icons.Mail)"
-                        ></span>
-                        <a href="mailto:ti.barracha@gmail.com" class="bg-main-gradient bg-clip-text text-transparent">ti.barracha&#64;gmail.com</a>
-                    </div>
+                    <a href="mailto:ti.barracha@gmail.com" class="bg-main-gradient bg-clip-text text-transparent">ti.barracha&#64;gmail.com</a>
 
                     <!-- Phone -->
                     <!-- <div class="flex items-center justify-center space-x-2">
