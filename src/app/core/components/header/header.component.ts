@@ -1,23 +1,30 @@
 import { Component } from '@angular/core';
 import { ThemeToggleComponent } from "../theme-toggle/theme-toggle.component";
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { ProjectService } from '../../../features/projects/service/project.service';
 import { ProjectType } from '../../models/project';
 import { ContactCardComponent } from "../../../features/contact-card/contact-card.component";
 import { EventService } from '../../services/event.service';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, ThemeToggleComponent, ContactCardComponent],
+  imports: [NgClass, ThemeToggleComponent, ContactCardComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  isProjectPage: boolean = false;
+
   constructor(
-    private router: Router,
+    public router: Router,
     private projectService: ProjectService,
     private eventService: EventService
   ) {}
+
+  isCurrentPage(route: string): boolean {
+    return this.router.url === route;
+  }
 
   navigateToProjects(): void {
     this.router.navigate(['/']).then(() => {

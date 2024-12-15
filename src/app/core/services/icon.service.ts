@@ -16,4 +16,13 @@ export class IconService {
   getSanitizedIcon(icon: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(icon);
   }
+
+  getSanitizedGradientIcon(icon: string): SafeHtml {
+    // Add gradient classes to the <svg> tag
+    const gradientIcon = icon.replace(
+      '<svg ',
+      `<svg class="bg-main-gradient bg-clip-text text-transparent" `
+    );
+    return this.sanitizer.bypassSecurityTrustHtml(gradientIcon);
+  }
 }

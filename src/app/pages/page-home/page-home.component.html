@@ -27,16 +27,41 @@
                 </div>
             </div>
 
-            <!-- Tech Stack Section -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-primary">
-                <div
-                    *ngFor="let technology of technologies" 
-                    class="flex items-center justify-center">
-                    <app-tech-display
-                        class="w-full h-16 border border-primary rounded-lg p-4"
-                        [technology]="technology"
-                        [size]="'small'">
-                    </app-tech-display>
+            <div class="flex flex-col-reverse sm:flex-col gap-16"> 
+                <!-- Tech Stack Section -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8 text-primary">
+                    <div
+                        *ngFor="let technology of technologies" 
+                        class="flex items-center justify-center">
+                        <app-tech-display
+                            class="w-full h-16 border border-primary rounded-lg p-4"
+                            [technology]="technology"
+                            [size]="'small'">
+                        </app-tech-display>
+                    </div>
+                </div>
+
+                <!-- Socials -->
+                <div class="flex flex-row items-center justify-center gap-8 text-primary">    
+                    <a href="https://www.linkedin.com/in/tiago-barracha/" target="_blank"  class="w-6">
+                        <div [innerHTML]="iconService.getSanitizedIcon(iconService.icons.LinkedIn)">
+                        </div>
+                    </a>
+    
+                    <a href="https://github.com/tbarracha" target="_blank" class="w-6">
+                        <div [innerHTML]="iconService.getSanitizedIcon(iconService.icons.GitHub)">
+                        </div>
+                    </a>
+    
+                    <a href="https://www.youtube.com/@tiagobarracha" target="_blank" class="w-6">
+                        <div [innerHTML]="iconService.getSanitizedIcon(iconService.icons.Youtube)">
+                        </div>
+                    </a>
+                    
+                    <a href="https://drive.google.com/file/d/1M_Xy8tNV5kpJZ95S5LDqN20h6jWE7oZI/view" target="_blank" class="w-6">
+                        <div [innerHTML]="iconService.getSanitizedIcon(iconService.icons.PDF)">
+                        </div>
+                    </a>
                 </div>
             </div>
 

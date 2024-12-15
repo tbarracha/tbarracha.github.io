@@ -4,7 +4,7 @@
       (click)="closeCard()"
     >
       <div 
-        class="relative bg-background bg-opacity-50 text-background-contrast backdrop-blur-sm rounded-xl overflow-hidden shadow-2xl w-[90%] max-w-lg h-[80%] transition-transform duration-300"
+        class="relative bg-background bg-opacity-50 text-background-contrast backdrop-blur-sm rounded-xl overflow-hidden shadow-2xl w-full mx-16 max-w-lg h-[60%] transition-transform duration-300"
         (click)="$event.stopPropagation()"
       >
         <!-- Close Button -->
@@ -33,22 +33,17 @@
                     </div>
 
                     <!-- Phone -->
-                    <div class="flex items-center justify-center space-x-2">
+                    <!-- <div class="flex items-center justify-center space-x-2">
                         <span 
                             class="inline-block w-4 h-4 mr-1"
                             [innerHTML]="iconService.getSanitizedIcon(iconService.icons.Phone)"
                         ></span>
                         <span>+351 915 459 333</span>
-                    </div>
+                    </div> -->
                 </div>
                 
                 <!-- Socials -->
-                <div class="flex flex-row items-center justify-center gap-4">
-                    <a href="https://drive.google.com/file/d/1M_Xy8tNV5kpJZ95S5LDqN20h6jWE7oZI/view" target="_blank" class="w-8">
-                        <div [innerHTML]="iconService.getSanitizedIcon(iconService.icons.CV)">
-                        </div>
-                    </a>
-
+                <div class="flex flex-row items-center justify-center gap-4 text-primary">
                     <a href="https://www.linkedin.com/in/tiago-barracha/" target="_blank"  class="w-8">
                         <div [innerHTML]="iconService.getSanitizedIcon(iconService.icons.LinkedIn)">
                         </div>
@@ -61,6 +56,11 @@
 
                     <a href="https://www.youtube.com/@tiagobarracha" target="_blank" class="w-8">
                         <div [innerHTML]="iconService.getSanitizedIcon(iconService.icons.Youtube)">
+                        </div>
+                    </a>
+                    
+                    <a href="https://drive.google.com/file/d/1M_Xy8tNV5kpJZ95S5LDqN20h6jWE7oZI/view" target="_blank" class="w-8">
+                        <div [innerHTML]="iconService.getSanitizedIcon(iconService.icons.PDF)">
                         </div>
                     </a>
                 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeaderComponent } from "../../core/components/header/header.component";
 import { Technologies, Technology } from '../../core/models/technologies';
 import { TechDisplayComponent } from "../../features/technologies/tech-display/tech-display.component";
@@ -7,6 +7,7 @@ import { ProjectTypeSelectorComponent } from "../../features/projects/components
 import { Project } from '../../core/models/project';
 import { Projects } from '../../core/models/projects';
 import { ProjectListComponent } from "../../features/projects/components/project-list/project-list.component";
+import { IconService } from '../../core/services/icon.service';
 
 @Component({
   selector: 'app-page-home',
@@ -22,4 +23,6 @@ export class PageHomeComponent {
     Technologies.DotNetCore,
     Technologies.Python
   ];
+
+  iconService: IconService = inject(IconService);
 }

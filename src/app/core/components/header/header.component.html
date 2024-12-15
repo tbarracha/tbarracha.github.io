@@ -1,34 +1,43 @@
-<header class="w-full h-header-height px-main-padding
-flex flex-row items-center">
+<header class="w-full h-header-height px-main-padding flex flex-row items-center">
     <!-- Brand Name -->
-    <div class="flex-1">
-        <!-- <a href="/" class="text-lg font-bold font-red-hat-display">Tiago Barracha</a> -->
-    </div>
-
+    <div class="flex-1"></div>
+  
     <!-- Navigation Links -->
     <div class="flex-1">
-        <nav class="flex justify-center space-x-4">
-            <a [routerLink]="['/']" routerLinkActive="underline" class="hover:underline">
-                Home
-            </a>
-            <a (click)="navigateToProjects()" class="hover:underline cursor-pointer">
-                Projects
-            </a>
-            <a [routerLink]="['/about']" routerLinkActive="underline" class="hover:underline">
-                About
-            </a>
-            <a (click)="toggleContactCard()" class="hover:underline cursor-pointer">
-                Contact
-            </a>
-        </nav>
+      <nav class="flex justify-center space-x-4">
+        <a
+          (click)="router.navigate(['/'])"
+          class="cursor-pointer hover:underline hover:bg-main-gradient hover:bg-clip-text hover:text-transparent"
+        >
+          Home
+        </a>
+        <a
+          (click)="navigateToProjects()"
+          class="cursor-pointer hover:underline hover:bg-main-gradient hover:bg-clip-text hover:text-transparent"
+        >
+          Projects
+        </a>
+        <a
+          (click)="router.navigate(['/about'])"
+          class="cursor-pointer hover:underline hover:bg-main-gradient hover:bg-clip-text hover:text-transparent"
+        >
+          About
+        </a>
+        <a
+          (click)="toggleContactCard()"
+          class="cursor-pointer hover:underline hover:bg-main-gradient hover:bg-clip-text hover:text-transparent"
+        >
+          Contact
+        </a>
+      </nav>
     </div>
-
+  
     <!-- Theme Toggle -->
     <div class="flex-1 flex justify-end">
-        <div class="h-full flex justify-center">
-            <app-theme-toggle></app-theme-toggle>
-        </div>
+      <div class="h-full flex justify-center">
+        <app-theme-toggle></app-theme-toggle>
+      </div>
     </div>
-</header>
-
-<app-contact-card></app-contact-card>
+  </header>
+  <app-contact-card></app-contact-card>
+  
