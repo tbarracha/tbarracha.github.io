@@ -1,19 +1,22 @@
-<section class="relative rounded-lg shadow-xl shadow-slate-600/20 overflow-hidden w-full h-48 transition-all duration-300">
+<section 
+    class="relative rounded-lg shadow-xl shadow-slate-600/20 overflow-hidden w-full h-48 transition-all duration-300 group"
+>
     <!-- Background -->
     <div
-        class="absolute inset-0 h-full w-full hover:shadow-slate-800/20 transition-all duration-300">
+        class="absolute inset-0 h-full w-full hover:shadow-slate-800/20 transition-all duration-300"
+    >
     </div>
 
     <!-- Current Image -->
     <img
         [src]="project.images?.[currentImageIndex]"
         [alt]="project.name"
-        class="w-full h-full object-cover"
+        class="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-300"
         *ngIf="project.images?.length; else noImage"
     >
 
-        <!-- Select Button -->
-        <button
+    <!-- Select Button -->
+    <button
         class="absolute inset-0 h-full w-full"
         (click)="selectProject()"
     >

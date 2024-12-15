@@ -1,0 +1,71 @@
+@if (showContactCard) {
+    <div 
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+      (click)="closeCard()"
+    >
+      <div 
+        class="relative bg-background bg-opacity-50 text-background-contrast backdrop-blur-sm rounded-xl overflow-hidden shadow-xl w-[90%] max-w-lg h-[80%] transform-gpu transition-transform duration-300"
+        (mousemove)="onMouseMove($event)"
+        (click)="$event.stopPropagation()"
+        [ngStyle]="{
+          transform: 'rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateZ(0)'
+        }"
+      >
+        <!-- Close Button -->
+        <button 
+          class="w-8 absolute top-4 right-4 text-white drop-shadow-lg rounded-full bg-black/5 hover:bg-black/20 transition-all duration-300"
+          (click)="closeCard()"
+          [innerHTML]="iconService.getSanitizedIcon(iconService.icons.Close)"
+        >
+        </button>
+    
+        <!-- Card Content -->
+        <div class="w-full h-full flex flex-col items-center justify-center space-y-4 p-4">
+            <img src="images/tiago_photo.jpg" alt="Photo of Tiago" class="w-32 h-32 rounded-full shadow-xl" />
+            <h2 class="text-2xl font-bold">Contact Me</h2>
+            <div class="flex flex-col space-y-8 text-center">
+                
+                <!-- Contacts -->
+                <div class="flex flex-col space-y-2">
+                    <!-- Email -->
+                    <div class="flex items-center justify-center space-x-2">
+                        <span 
+                        class="inline-block w-4 h-4 mr-1"
+                        [innerHTML]="iconService.getSanitizedIcon(iconService.icons.Mail)"
+                        ></span>
+                        <a href="mailto:ti.barracha@gmail.com" class="bg-main-gradient bg-clip-text text-transparent">ti.barracha&#64;gmail.com</a>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="flex items-center justify-center space-x-2">
+                        <span 
+                            class="inline-block w-4 h-4 mr-1"
+                            [innerHTML]="iconService.getSanitizedIcon(iconService.icons.Phone)"
+                        ></span>
+                        <span>+351 915 459 333</span>
+                    </div>
+                </div>
+                
+                <!-- Socials -->
+                <div class="flex flex-row items-center justify-center gap-4 text-primary">
+                    <a href="https://drive.google.com/file/d/1M_Xy8tNV5kpJZ95S5LDqN20h6jWE7oZI/view" target="_blank" class="w-8"
+                    [innerHTML]="iconService.getSanitizedIcon(iconService.icons.CV)">
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tiago-barracha/" target="_blank" class="w-8"
+                    [innerHTML]="iconService.getSanitizedIcon(iconService.icons.LinkedIn)">
+                    </a>
+
+                    <a href="https://github.com/tbarracha" target="_blank" class="w-8"
+                    [innerHTML]="iconService.getSanitizedIcon(iconService.icons.GitHub)">
+                    </a>
+
+                    <a href="https://www.youtube.com/@tiagobarracha" target="_blank" class="w-8"
+                    [innerHTML]="iconService.getSanitizedIcon(iconService.icons.Youtube)">
+                    </a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+}

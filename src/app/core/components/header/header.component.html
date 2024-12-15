@@ -17,7 +17,7 @@ flex flex-row items-center">
             <a [routerLink]="['/about']" routerLinkActive="underline" class="hover:underline">
                 About
             </a>
-            <a [routerLink]="['/contact']" routerLinkActive="underline" class="hover:underline">
+            <a (click)="toggleContactCard()" class="hover:underline cursor-pointer">
                 Contact
             </a>
         </nav>
@@ -30,3 +30,5 @@ flex flex-row items-center">
         </div>
     </div>
 </header>
+
+<app-contact-card></app-contact-card>

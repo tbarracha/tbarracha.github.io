@@ -42,22 +42,25 @@
 
         </section>
 
-
         <!-- Project Section Here -->
+        <section>
 
-        <!-- Project Type Selector (sticky) -->
-        <section class="sticky top-0 z-10 py-4 h-10 w-full">
-            <div class="z-0 absolute -top-1 w-full h-1/2 bg-background">
-            </div>
-            <div class="z-0 absolute top-0 w-full h-1/2 bg-background shadow-lg shadow-slate-600/20">
-            </div>
-            <!-- bg-gradient-to-b from-background via-background to-transparent -->
-            <app-project-type-selector></app-project-type-selector>
-        </section>
-
-        <!-- Project List (scrollable) -->
-        <section id="projects" class="w-full py-10 min-h-[calc(100vh-theme(spacing.header-height))]">
-            <app-project-list></app-project-list>
+            <!-- Project Type Selector (sticky) -->
+            <section class="sticky top-0 z-10 h-10 w-full overflow-hidden">
+                <div class="z-0 absolute -top-2 w-full h-1/2 bg-background">
+                </div>
+                <div class="z-0 absolute top-0 w-full h-1/2 bg-background shadow-lg shadow-slate-600/20">
+                </div>
+                <!-- bg-gradient-to-b from-background via-background to-transparent -->
+                 <div class="relative w-full h-full overflow-visible">
+                     <app-project-type-selector></app-project-type-selector>
+                 </div>
+            </section>
+    
+            <!-- Project List (scrollable) -->
+            <section id="projects" class="w-full py-10 min-h-[calc(100vh-theme(spacing.header-height))]">
+                <app-project-list></app-project-list>
+            </section>
         </section>
 
     </section>

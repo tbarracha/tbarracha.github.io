@@ -11,5 +11,7 @@ export class EventService {
   public readonly onUserLogin : EventEmitter<any> = new EventEmitter<any>();
   public readonly onUserLogout : EventEmitter<any> = new EventEmitter<any>();
 
+  public readonly onContactCardToggle : EventEmitter<boolean> = new EventEmitter<boolean>();
+
   constructor() { }
 }

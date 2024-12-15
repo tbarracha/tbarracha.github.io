@@ -59,7 +59,7 @@
                 </div>
 
                 <!-- Image Selection Section -->
-                <div class="min-h-20 overflow-x-auto overflow-y-hidden flex items-center justify-center gap-2 p-2">
+                <div class="min-h-20 overflow-x-auto overflow-y-hidden flex items-center justify-start md:justify-center gap-2 p-2">
                     <div
                         *ngFor="let image of project?.images; let i = index"
                         class="relative w-20 h-16 flex-shrink-0 cursor-pointer overflow-hidden rounded-lg"
@@ -80,14 +80,29 @@
                 <!-- Project Title -->
                 <div class="px-4 pt-4">
                     <h3 class="text-2xl font-semibold text-primary mb-4">{{ project.name }}</h3>
-                    <p class="text-sm hidden md:flex">{{ project.date }} | {{ project.employer }}</p>
+                    <p class="text-sm hidden md:flex md:space-x-1"> <span class="">{{ project.date }}</span> <span>-</span> <span class="font-bold">{{ project.employer }}</span></p>
                 </div>
 
                 <!-- Project Details & Navigation -->
                 <div class="flex-grow flex flex-col overflow-y-auto">
-                    <div class="px-4 pb-4 flex-grow overflow-y-scroll" #detailsContainer>
+                    <div class="md:mt-4 px-4 pb-4 flex-grow overflow-y-scroll" #detailsContainer>
+                        
+                        <p class="text-sm flex space-x-1 md:hidden"> <span class="">{{ project.date }}</span> <span>-</span> <span class="font-bold">{{ project.employer }}</span></p>
 
-                        <p class="text-sm flex md:hidden">{{ project.date }} | {{ project.employer }}</p>
+                        <!-- Technologies -->
+                        <div class="flex flex-wrap gap-4 mb-6">
+                            <span
+                                *ngFor="let tech of project.technologies"
+                                class="inline-flex items-center text-highlight-contrast text-sm py-1 rounded-lg"
+                            >
+                                <span 
+                                    class="inline-block w-4 h-4 mr-1"
+                                    [innerHTML]="iconService.getSanitizedIcon(tech.icon)"
+                                    *ngIf="tech.icon"
+                                ></span>
+                                {{ tech.name }}
+                            </span>
+                        </div> 
 
                         <!-- Project Details Section -->
                         <div class="space-y-4">
