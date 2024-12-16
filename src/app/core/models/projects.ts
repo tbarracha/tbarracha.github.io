@@ -11,7 +11,7 @@ export class Projects extends StaticListModel<Project> {
         employer: 'Stardrop Dev',
         sections: [
             {
-                title: "Premise",
+                title: "About",
                 content: `Dashy Heroes began as a fast-paced mobile game, originally created during an Erasmus experience in the Netherlands with two fellow students.
                 
                 As a university project, I wore many hats, handling game design and art direction. From crafting the Game Design Document to creating 2D art in Adobe Illustrator and 3D models & animations in Blender.
@@ -47,7 +47,7 @@ export class Projects extends StaticListModel<Project> {
         employer: 'Personal',
         sections: [
             {
-                title: "Premise",
+                title: "About",
                 content: 'Talkative was crafted as your go-to app to spark engaging conversations. It’s packed with questions and dares across categories, from casual to professional, and even a little daring—perfect for breaking the ice with just a little swipe!'
             },
             {
@@ -80,7 +80,7 @@ export class Projects extends StaticListModel<Project> {
         employer: 'Personal',
         sections: [
             {
-                title: "Premise",
+                title: "About",
                 content: `Your very own online Pokedex! Browse through Pokémon, hear their unique cries, and dive into details. Built with Angular and designed for all Pokémon fans.
                 
                 Developed for a frontend course, this Pokedex app combines Angular skills with PokeAPI for a truly interactive experience. It’s built around best practices in Angular, from routing to services. The final product, hosted on Netlify, is a vibrant Pokémon exploration tool with a few quirky surprises!`
@@ -116,7 +116,7 @@ export class Projects extends StaticListModel<Project> {
         employer: 'Personal',
         sections: [
             {
-                title: "Premise",
+                title: "About",
                 content: `Get ready for a cube-crafting adventure! Merge, match, and dominate with each level in this colorful, dynamic game.
                 
                 Fun Blocks Merge was inspired by my game development days on Roblox. It’s the first in a series of one-game-per-month challenges, designed to kickstart creativity and hone skills. It’s colorful, it’s fun, and it’s all about merging those blocks!`
@@ -146,7 +146,7 @@ export class Projects extends StaticListModel<Project> {
         employer: 'Personal',
         sections: [
             {
-                title: "Premise",
+                title: "About",
                 content: `Swipe Blade was my second game in the one-game-per-month challenge. Developed in just three weeks, it’s a swiping, slicing action game that takes quick reflexes and even quicker thinking!`
             }
         ],
@@ -179,8 +179,12 @@ export class Projects extends StaticListModel<Project> {
         employer: 'Personal',
         sections: [
             {
-                title: "Premise",
-                content: 'This portfolio was built to showcase my work and skills, using Angular and Tailwind CSS. The current version is hosted on Netlify, but I’m exploring even more streamlined hosting with Hetzner in the near future.'
+                title: "About",
+                content: 'This portfolio was built to showcase my work and skills. As you can see in the images, it has gone through some transformations.'
+            },
+            {
+                title: "Plans",
+                content: 'The current version is hosted on Netlify, but I’m exploring even more streamlined hosting with Hetzner in the near future.'
             }
         ],
         types: [ProjectType.Web, ProjectType.Mobile],
@@ -198,6 +202,9 @@ export class Projects extends StaticListModel<Project> {
             "images/projects/portfolio/proj_portfolio_1.png",
             "images/projects/portfolio/proj_portfolio_2.png",
             "images/projects/portfolio/proj_portfolio_3.png",
+            "images/projects/portfolio/proj_portfolio_4.png",
+            "images/projects/portfolio/proj_portfolio_5.png",
+            "images/projects/portfolio/proj_portfolio_6.png",
         ]
     };
 
@@ -207,7 +214,7 @@ export class Projects extends StaticListModel<Project> {
         employer: 'Personal',
         sections: [
             {
-                title: "Premise",
+                title: "About",
                 content: "Emoji Lib is the ultimate tool to spice up your projects with emojis! It’s fast, fun, and ridiculously easy to use. Search, filter, and copy emojis in seconds, with a sleek design that fits anywhere. Whether you're building the next big app or just want to make people smile, Emoji Lib has you covered."
             }
         ],
@@ -238,9 +245,8 @@ export class Projects extends StaticListModel<Project> {
         employer: 'Personal',
         sections: [
             {
-                title: "Premise",
-                content: `
-                Stardrop Tools is my personal suite of Unity scripting utilities, crafted to streamline the game development process with speed and precision.
+                title: "About",
+                content: `Stardrop Tools is my personal suite of Unity scripting utilities, crafted to streamline the game development process with speed and precision.
 
                 These tools are built to tackle repetitive tasks, boost productivity, and create a smoother, more enjoyable development experience, bringing a little extra magic to each project!
                 `,
@@ -268,7 +274,7 @@ export class Projects extends StaticListModel<Project> {
         employer: 'The Gang Sweden, FIFA',
         sections: [
             {
-                title: "Premise",
+                title: "About",
                 content: `While at <a href="https://www.thegang.io/" target="_blank" rel="noopener noreferrer" class="bg-main-gradient bg-clip-text text-transparent hover:underline">The Gang Sweden</a>, I took on the challenge of developing the Goalkeeper AI for Fifa Footblocks, a popular Roblox game.
                 
                 It was all about capturing the thrill of the sport while delivering reliable, smart AI!`
@@ -302,7 +308,7 @@ export class Projects extends StaticListModel<Project> {
         employer: 'The Gang Sweden, iHeart Radio',
         sections: [
             {
-                title: "Premise",
+                title: "About",
                 content: `Working on <a href="https://www.thegang.io/" target="_blank" rel="noopener noreferrer" class="bg-main-gradient bg-clip-text text-transparent hover:underline">The Gang Sweden's</a> team, I crafted interactive NPCs, scavenger hunts, enemy AI, and combat systems for iHeart Radio Tycoon.
                 
                 The game combines engaging gameplay with the recognizable iHeart brand in an exciting, player-centered experience!`
@@ -338,7 +344,7 @@ export class Projects extends StaticListModel<Project> {
         employer: 'The Gang Sweden',
         sections: [
             {
-                title: "Premise",
+                title: "About",
                 content: `On this project with <a href="https://www.thegang.io/" target="_blank" rel="noopener noreferrer" class="bg-main-gradient bg-clip-text text-transparent hover:underline">The Gang Sweden</a>, I was responsible for NPC interactions, scavenger hunts, and a soccer minigame in Gucci Town, merging luxury branding with immersive gaming experiences.`
             }
         ],
@@ -363,11 +369,45 @@ export class Projects extends StaticListModel<Project> {
             "images/projects/the_gang_sweden/gucci_town/proj_gucci_town_2.webp",
             "images/projects/the_gang_sweden/gucci_town/proj_gucci_town_3.png",
         ]
-    };    
+    };
+
+    public static readonly Angspire: Project = {
+        name: 'Angspire',
+        date: "2024",
+        employer: 'Personal',
+        sections: [
+            {
+                title: "About",
+                content: `Angspire is an Angular + .NET (monorepo) project template designed to simplify development with out-of-the-box features like (basic) user authentication and frontend themes, reducing setup time and providing a scalable, maintainable foundation for your applications.`,
+            },
+            {
+                title: "Features",
+                content: '★ Angular 19\n★ Dot Net 9.0\n★ Aspire 9.0\n★ Monorepo structure\n★ Basic user authentication\n★ Frontend themes'
+            }
+        ],
+        types: [ProjectType.Web, ProjectType.Tool, ProjectType.Other],
+        technologies: [Technologies.Angular, Technologies.DotNetCore, Technologies.PostgreSQL],
+        links: [
+            {
+                name: 'Github',
+                url: 'https://github.com/tbarracha/Angspire',
+                icon: Icons.GitHub
+            }
+        ],
+        imgFolder: 'images/projects/angspire',
+        images: [
+            "images/projects/angspire/proj_angspire_0.png",
+            "images/projects/angspire/proj_angspire_1.png",
+            "images/projects/angspire/proj_angspire_2.png",
+            "images/projects/angspire/proj_angspire_3.png",
+            "images/projects/angspire/proj_angspire_4.png",
+            "images/projects/angspire/proj_angspire_5.png",
+        ]
+    };
 }
 
 export const FeaturedProjects: Project[] = [
     Projects.DashyHeroes,
-    Projects.Pokedex,
+    Projects.Angspire,
     Projects.FifaFootblocks
 ] as const;

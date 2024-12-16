@@ -110,6 +110,33 @@
                                 <h4 class="text-lg font-semibold mb-2">{{ section.title }}</h4>
                                 <p class="whitespace-pre-line" [innerHTML]="section.content"></p>
                             </div>
+
+                            <!-- Links Section -->
+                            <div class="mb-6">
+                                <h4 class="text-lg font-semibold mb-2">Links</h4>
+                                <ul class="space-y-2">
+                                    <li
+                                        *ngFor="let link of project.links"
+                                        class="flex items-center gap-2"
+                                    >
+                                        <!-- Link Icon -->
+                                        <span 
+                                            class="flex items-center justify-center w-4 h-4"
+                                            [innerHTML]="iconService.getSanitizedIcon(link.icon)"
+                                            *ngIf="link.icon"
+                                        ></span>
+                                        <!-- Link Name -->
+                                        <a 
+                                            [href]="link.url"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="hover:underline text-primary flex items-center gap-1"
+                                        >
+                                            {{ link.name }}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
