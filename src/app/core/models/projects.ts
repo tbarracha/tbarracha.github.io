@@ -404,10 +404,49 @@ export class Projects extends StaticListModel<Project> {
             "images/projects/angspire/proj_angspire_5.png",
         ]
     };
+
+    public static readonly NgInfiniteCraft: Project = {
+        name: 'Ng Infinite Craft',
+        date: "2024",
+        employer: 'Personal',
+        sections: [
+            {
+                title: "About",
+                content: `Ng Infinity Craft is a 7-day prototype inspired by the viral Infinite Craft game. Built using Angular and powered by Transformers.js, this project combines the classic element-merging game concept with a local, in-browser language model (LLM) for dynamic element generation.
+                
+                Initially meant to be a scrappy experiment, it was revived after a shower "aha!" moment to demonstrate the potential of integrating AI into gaming. It’s a fun experiment that showcases Angular, local LLMs, and creativity in action.`,
+            },
+            {
+                title: "Features",
+                content: '★ Local LLM-powered element generation\n★ Angular-powered drag-and-drop gameplay\n★ Predefined and AI-generated recipes'
+            }
+        ],
+        types: [ProjectType.Web, ProjectType.AI],
+        technologies: [Technologies.TransformersJS, Technologies.Angular, Technologies.Typescript, Technologies.TailwindCss],
+        links: [
+            {
+                name: 'Live Demo',
+                url: 'https://ng-infinite-craft.onrender.com',
+                icon: Icons.Internet
+            },
+            {
+                name: 'Github',
+                url: 'https://github.com/tbarracha/ng-infinite-craft',
+                icon: Icons.GitHub
+            }
+        ],
+        imgFolder: 'images/projects/ng_infinite_craft',
+        images: [
+            "images/projects/ng_infinite_craft/proj_ng_infinite_craft_0.png",
+            "images/projects/ng_infinite_craft/proj_ng_infinite_craft_1.png",
+            "images/projects/ng_infinite_craft/proj_ng_infinite_craft_2.png",
+            "images/projects/ng_infinite_craft/proj_ng_infinite_craft_3.png",
+        ]
+    };
 }
 
 export const FeaturedProjects: Project[] = [
-    Projects.DashyHeroes,
+    Projects.NgInfiniteCraft,
     Projects.Angspire,
     Projects.FifaFootblocks
 ] as const;

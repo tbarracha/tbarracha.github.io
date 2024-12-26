@@ -22,6 +22,7 @@ export class ProjectTypeSelectorComponent {
     ProjectType.App,
     ProjectType.Mobile,
     ProjectType.Game,
+    ProjectType.AI,
     ProjectType.Other,
   ];
 
