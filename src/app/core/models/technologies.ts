@@ -44,9 +44,9 @@ export class Technologies extends StaticListModel<Technology> {
 
     public static readonly TransformersJS: Technology = {
         name: 'TransformersJS',
-        description: 'Web GPU LLMs',
+        description: 'In-Browser LLMs',
         url: 'https://huggingface.co/docs/transformers.js/en/index',
-        icon: Icons.AIBrain
+        icon: Icons.AiBrain
     };
 
     public static readonly TailwindCss: Technology = {
